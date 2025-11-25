@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_content_blocks_awards_clients",
+    "info": { "displayName": "Awards and Clients" },
+    "attributes": {
+      "awards": {
+        "type": "component",
+        "repeatable": true,
+        "component": "shared.award"
+      },
+      "clients": {
+        "type": "component",
+        "repeatable": true,
+        "component": "shared.client"
+      }
+    }
+  }

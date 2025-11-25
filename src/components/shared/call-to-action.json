@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_call_to_actions",
+  "info": {
+    "displayName": "CallToAction",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "Button": {
+      "displayName": "Button",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    },
+    "List": {
+      "displayName": "List",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

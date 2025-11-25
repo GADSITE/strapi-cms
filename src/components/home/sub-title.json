@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_home_sub_titles",
+  "info": {
+    "displayName": "SubTitle",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

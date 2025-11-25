@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_privacy_list_items",
+    "info": {
+      "displayName": "Item da Lista",
+      "icon": "dot-circle"
+    },
+    "attributes": {
+      "label": { "type": "string" },
+      "description": { "type": "text" }
+    }
+  }

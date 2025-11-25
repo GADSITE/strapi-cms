@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_privacy_section_texts",
+  "info": {
+    "displayName": "Seção (Texto)",
+    "icon": "align-left"
+  },
+  "attributes": {
+    "title": { "type": "string" },
+    "content": { "type": "richtext" }
+  }
+}

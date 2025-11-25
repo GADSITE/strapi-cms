@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_cases",
+  "info": {
+    "displayName": "Cases",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cases.case-study"
+    }
+  }
+}

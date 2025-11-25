@@ -1,0 +1,9 @@
+{
+    "collectionName": "components_content_blocks_awards",
+    "info": { "displayName": "Award" },
+    "attributes": {
+      "name": { "type": "string" },
+      "logo": { "type": "media" },
+      "year": { "type": "string" }
+    }
+  }

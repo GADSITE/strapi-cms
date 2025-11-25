@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_article_grid_image",
+  "info": {
+    "name": "Grid Image",
+    "icon": "grid",
+    "displayName": "Grid Image",
+    "description": "Single image in a grid layout"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "string"
+    },
+    "gridSize": {
+      "type": "enumeration",
+      "enum": ["small", "medium", "large"],
+      "default": "medium"
+    }
+  }
+}

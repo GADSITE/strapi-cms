@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_list_awards",
+  "info": {
+    "displayName": "ListAwards",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_article_column_content",
+  "info": {
+    "name": "Column Content",
+    "icon": "layout",
+    "displayName": "Column Content",
+    "description": "Content organized in columns"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "columns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "article.column-item"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": ["two-column", "three-column", "four-column"],
+      "default": "two-column"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_article_column_item",
+  "info": {
+    "name": "Column Item",
+    "icon": "layout",
+    "displayName": "Column Item",
+    "description": "Individual column content item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

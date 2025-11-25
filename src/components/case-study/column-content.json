@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_case_study_column_contents",
+  "info": {
+    "displayName": "Column Content",
+    "description": "Conteúdo para uma coluna (imagem, vídeo ou texto)"
+  },
+  "options": {},
+  "attributes": {
+    "contentType": {
+      "type": "enumeration",
+      "enum": ["image", "video", "text"],
+      "required": true,
+      "default": "image"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": ["white", "light-gray", "dark-blue", "primary"],
+      "default": "white"
+    },
+    "textColor": {
+      "type": "enumeration",
+      "enum": ["white", "black", "primary"],
+      "default": "black"
+    }
+  }
+}

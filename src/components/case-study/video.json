@@ -1,0 +1,19 @@
+{
+    "collectionName": "components_case_study_videos",
+    "info": {
+      "displayName": "Video Block",
+      "icon": "video",
+      "description": "Bloco de vídeo incorporado"
+    },
+    "options": {},
+    "attributes": {
+      "title": { "type": "string" },
+      "videoUrl": { "type": "string" },
+      "description": { "type": "text" },
+      "ratio": {
+        "type": "enumeration",
+        "enum": ["16-9", "1-1", "9-16"],
+        "default": "16-9"
+      }
+    }
+  }

@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cases",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Studies",
+    "description": "Coleção de estudos de caso com blocos de conteúdo dinâmico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "imageFeatured": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "slim"
+      ]
+    },
+
+    "order": {
+      "type": "integer"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+     "segmentTags": {
+       "type": "relation",
+       "relation": "manyToMany",
+       "target": "api::segment-tag.segment-tag"
+     },
+     "serviceTags": {
+       "type": "relation",
+       "relation": "manyToMany",
+       "target": "api::service-tag.service-tag"
+     },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "case-study.hero-section",
+        "case-study.text-block",
+        "case-study.full-width-media",
+        "case-study.two-images",
+        "case-study.text-image",
+        "case-study.video",
+        "case-study.gallery",
+        "case-study.quote",
+        "case-study.grid-image",
+        "case-study.image-grid",
+        "case-study.two-column",
+        "case-study.column-content"
+      ]
+    }
+  }
+}

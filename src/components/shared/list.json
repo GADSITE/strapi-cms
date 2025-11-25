@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_lists",
+  "info": {
+    "displayName": "List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "number": {
+      "type": "float"
+    }
+  }
+}

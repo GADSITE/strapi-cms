@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_case_study_grid_images",
+  "info": {
+    "displayName": "Grid Image",
+    "description": "Imagem individual para o grid com legenda opcional"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_article_two_columns",
+  "info": {
+    "displayName": "Two Column",
+    "description": "Layout de duas colunas para artigos"
+  },
+  "options": {},
+  "attributes": {
+    "leftContent": {
+      "type": "richtext"
+    },
+    "rightContent": {
+      "type": "richtext"
+    },
+    "leftTitle": {
+      "type": "string"
+    },
+    "rightTitle": {
+      "type": "string"
+    },
+    "columnWidth": {
+      "type": "enumeration",
+      "enum": ["equal", "left-heavy", "right-heavy"],
+      "default": "equal"
+    }
+  }
+}
+

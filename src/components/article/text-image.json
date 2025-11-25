@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_article_text_image",
+  "info": {
+    "name": "Text Image",
+    "icon": "layout",
+    "displayName": "Text Image",
+    "description": "Text content with accompanying image"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "default": "left"
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

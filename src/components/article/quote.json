@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_article_quotes",
+  "info": {
+    "displayName": "Quote",
+    "description": "Citação destacada para artigos"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "authorRole": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": ["white", "light-gray", "primary", "dark"],
+      "default": "light-gray"
+    },
+    "textColor": {
+      "type": "enumeration",
+      "enum": ["white", "black", "primary"],
+      "default": "black"
+    }
+  }
+}
+

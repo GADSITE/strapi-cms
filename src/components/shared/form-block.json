@@ -1,0 +1,8 @@
+{
+    "collectionName": "components_content_blocks_form_blocks",
+    "info": { "displayName": "Form Block" },
+    "attributes": {
+      "fields": { "type": "json" },
+      "submit_url": { "type": "string" }
+    }
+  }

@@ -1,0 +1,9 @@
+{
+    "collectionName": "components_content_blocks_video_blocks",
+    "info": { "displayName": "Video Block" },
+    "attributes": {
+      "title": { "type": "string" },
+      "video": { "type": "media" },
+      "autoplay": { "type": "boolean" }
+    }
+  }

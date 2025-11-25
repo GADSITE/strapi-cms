@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_contents",
+  "info": {
+    "singularName": "page-content",
+    "pluralName": "page-contents",
+    "displayName": "Page Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "oh_my_gads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::oh-my-gad.oh-my-gad"
+    },
+    "news": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::new.new"
+    },
+    "transforming_gads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transforming-gad.transforming-gad"
+    },
+    "gad_insights": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gad-insight.gad-insight"
+    }
+  }
+}

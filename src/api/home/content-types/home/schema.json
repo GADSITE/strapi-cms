@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Page Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SliderHome": {
+      "type": "component",
+      "component": "home.slider",
+      "repeatable": true
+    },
+    "Cases": {
+      "displayName": "Cases",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.cases"
+    },
+    "CallToAction": {
+      "displayName": "CallToAction",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.call-to-action"
+    }
+  }
+}

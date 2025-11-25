@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_article_rich_texts",
+  "info": {
+    "displayName": "Rich Text",
+    "description": "Conteúdo de texto rico para artigos"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    },
+    "textSize": {
+      "type": "enumeration",
+      "enum": ["small", "medium", "large"],
+      "default": "medium"
+    }
+  }
+}
+

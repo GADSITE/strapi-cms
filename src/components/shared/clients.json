@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_clients",
+  "info": {
+    "displayName": "Clients",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ListClients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-awards"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

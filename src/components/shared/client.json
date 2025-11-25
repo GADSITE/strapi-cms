@@ -1,0 +1,8 @@
+{
+    "collectionName": "components_content_blocks_clients",
+    "info": { "displayName": "Client" },
+    "attributes": {
+      "name": { "type": "string" },
+      "logo": { "type": "media" }
+    }
+  }

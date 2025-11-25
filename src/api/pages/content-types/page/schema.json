@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Pages",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content_blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.hero-banner",
+        "shared.cta-section",
+        "shared.case-grid",
+        "shared.awards-and-clients",
+        "shared.team-section",
+        "shared.form-block",
+        "shared.video-block",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media",
+        "shared.slider",
+        "shared.heading",
+        "shared.links",
+        "shared.client",
+        "shared.award",
+        "shared.chapter",
+        "shared.list-phone",
+        "shared.form-type",
+        "shared.seo",
+        "article.hero-section",
+        "article.text-block",
+        "article.text-image",
+        "article.two-column",
+        "article.two-images",
+        "article.image-grid",
+        "article.gallery",
+        "article.video",
+        "article.quote",
+        "article.rich-text",
+        "article.full-width-media",
+        "article.grid-image",
+        "article.column-content",
+        "article.column-item",
+        "case-study.hero-section",
+        "case-study.text-block",
+        "case-study.text-image",
+        "case-study.two-column",
+        "case-study.two-images",
+        "case-study.image-grid",
+        "case-study.gallery",
+        "case-study.video",
+        "case-study.quote",
+        "case-study.full-width-media",
+        "case-study.grid-image",
+        "case-study.column-content",
+        "home.slider",
+        "home.sub-title",
+        "privacy.list-item",
+        "privacy.section-list",
+        "privacy.section-text"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

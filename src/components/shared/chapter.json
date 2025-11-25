@@ -1,0 +1,9 @@
+{
+    "collectionName": "components_content_blocks_chapters",
+    "info": { "displayName": "Chapter" },
+    "attributes": {
+      "title": { "type": "string" },
+      "content": { "type": "richtext" },
+      "media": { "type": "media" }
+    }
+  }

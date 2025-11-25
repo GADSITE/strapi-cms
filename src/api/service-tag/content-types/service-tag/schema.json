@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_tags",
+  "info": {
+    "singularName": "service-tag",
+    "pluralName": "service-tags",
+    "displayName": "Case Service Tags",
+    "description": "Tags para categorização de serviços"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "case_segment_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::segment-tag.segment-tag"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_content_blocks_case_grids",
+    "info": { "displayName": "Case Grid" },
+    "attributes": {
+      "cases": {
+        "type": "relation",
+        "relation": "manyToMany",
+        "target": "api::cases.case-study"
+      }
+    }
+  }

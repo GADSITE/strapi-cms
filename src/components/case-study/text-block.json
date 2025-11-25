@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_case_study_text_blocks",
+  "info": {
+    "displayName": "Text Block",
+    "description": "Bloco de texto com título e descrição rica"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": ["white", "light-gray", "dark-blue", "primary"],
+      "default": "white"
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    }
+  }
+}

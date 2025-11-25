@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_case_study_image_grids",
+  "info": {
+    "displayName": "Image Grid",
+    "description": "Grid de imagens com legendas opcionais"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "case-study.grid-image"
+    },
+    "columns": {
+      "type": "enumeration",
+      "enum": ["2", "3", "4"],
+      "default": "3"
+    },
+    "showCaptions": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

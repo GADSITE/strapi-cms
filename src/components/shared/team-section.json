@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_content_blocks_team_sections",
+    "info": { "displayName": "Team Section" },
+    "attributes": {
+      "members": {
+        "type": "component",
+        "repeatable": true,
+        "component": "shared.team-member"
+      },
+      "calendly_link": { "type": "string" }
+    }
+  }

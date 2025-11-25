@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_article_text_blocks",
+  "info": {
+    "displayName": "Text Block",
+    "description": "Bloco de texto para artigos com título e conteúdo rico"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": ["white", "light-gray", "dark-blue", "primary"],
+      "default": "white"
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    },
+    "textSize": {
+      "type": "enumeration",
+      "enum": ["small", "medium", "large"],
+      "default": "medium"
+    }
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_approaches",
+  "info": {
+    "displayName": "Approach",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

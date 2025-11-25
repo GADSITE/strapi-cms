@@ -1,0 +1,22 @@
+{
+    "collectionName": "components_case_study_galleries",
+    "info": {
+      "displayName": "Gallery",
+      "icon": "images",
+      "description": "Bloco de galeria de imagens"
+    },
+    "options": {},
+    "attributes": {
+      "images": {
+        "type": "media",
+        "multiple": true,
+        "allowedTypes": ["images"]
+      },
+      "layout": {
+        "type": "enumeration",
+        "enum": ["2-columns", "3-columns", "masonry"],
+        "default": "3-columns"
+      },
+      "showCaptions": { "type": "boolean", "default": false }
+    }
+  }

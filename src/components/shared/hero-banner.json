@@ -1,0 +1,10 @@
+{
+    "collectionName": "components_content_blocks_hero_banners",
+    "info": { "displayName": "Hero Banner" },
+    "attributes": {
+      "title": { "type": "string" },
+      "subtitle": { "type": "string" },
+      "background_image": { "type": "media" },
+      "video": { "type": "media" }
+    }
+  }

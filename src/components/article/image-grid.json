@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_article_image_grid",
+  "info": {
+    "name": "Image Grid",
+    "icon": "grid",
+    "displayName": "Image Grid",
+    "description": "Grid layout with multiple images"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "columns": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 3
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

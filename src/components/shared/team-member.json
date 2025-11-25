@@ -1,0 +1,10 @@
+{
+    "collectionName": "components_content_blocks_team_members",
+    "info": { "displayName": "Team Member" },
+    "attributes": {
+      "name": { "type": "string" },
+      "role": { "type": "string" },
+      "photo": { "type": "media" },
+      "linkedin_url": { "type": "string" }
+    }
+  }

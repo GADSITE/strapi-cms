@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_case_study_two_columns",
+  "info": {
+    "displayName": "Two Column Section",
+    "description": "Seção dividida em duas colunas para imagem, vídeo ou texto"
+  },
+  "options": {},
+  "attributes": {
+    "leftColumn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "case-study.column-content"
+    },
+    "rightColumn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "case-study.column-content"
+    },
+    "columnLayout": {
+      "type": "enumeration",
+      "enum": ["50-50", "60-40", "40-60"],
+      "default": "50-50"
+    }
+  }
+}

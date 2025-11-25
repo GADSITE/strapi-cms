@@ -1,0 +1,21 @@
+{
+    "collectionName": "components_case_study_text_image",
+    "info": {
+      "displayName": "Text & Image",
+      "icon": "file-text",
+      "description": "Texto com imagem ao lado"
+    },
+    "options": {},
+    "attributes": {
+      "title": { "type": "string" },
+      "text": { "type": "richtext" },
+      "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+      "imagePosition": {
+        "type": "enumeration",
+        "enum": ["left", "right"],
+        "default": "right"
+      },
+      "background": { "type": "string" },
+      "link": { "type": "string" }
+    }
+  }
