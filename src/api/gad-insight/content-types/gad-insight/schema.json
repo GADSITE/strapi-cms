@@ -55,16 +55,6 @@
         }
       }
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "featured": {
       "type": "boolean",
       "default": false,
@@ -106,6 +96,14 @@
           "localized": true
         }
       }
+    },
+    "paperLink": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

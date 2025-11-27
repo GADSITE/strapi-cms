@@ -9,4 +9,7 @@ export default ({ env }) => ({
       locales: ['pt-BR', 'en', 'es'],
     },
   },
+  'import-export-entries': {
+    enabled: true,
+  },
 });

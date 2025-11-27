@@ -104,6 +104,12 @@
         }
       }
     },
+    "transforming_gad_appointments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transforming-gad-appointment.transforming-gad-appointment",
+      "mappedBy": "transforming_gad"
+    },
     "seo": {
       "type": "component",
       "repeatable": false,

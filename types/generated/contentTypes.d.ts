@@ -1092,6 +1092,11 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::cases.case-study', 'title'>;
@@ -1142,6 +1147,12 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::cases.case-study',
+      'oneToMany',
+      'api::cases.case-study'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1548,16 +1559,6 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    author: Attribute.Relation<
-      'api::gad-insight.gad-insight',
-      'manyToOne',
-      'api::author.author'
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     featured: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1588,6 +1589,12 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    paperLink: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1617,64 +1624,6 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
   };
 }
 
-export interface ApiGeneralPageGeneralPage extends Schema.CollectionType {
-  collectionName: 'general_pages';
-  info: {
-    singularName: 'general-page';
-    pluralName: 'general-pages';
-    displayName: 'GeneralPages';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    title: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    SEO: Attribute.Component<'shared.seo', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::general-page.general-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::general-page.general-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::general-page.general-page',
-      'oneToMany',
-      'api::general-page.general-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -1685,6 +1634,11 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
   options: {
     draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     siteName: Attribute.String & Attribute.Required;
@@ -1705,6 +1659,12 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::global.global',
+      'oneToMany',
+      'api::global.global'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1719,6 +1679,11 @@ export interface ApiHomeHome extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     SliderHome: Attribute.Component<'home.slider', true>;
     Cases: Attribute.Component<'home.cases'>;
@@ -1730,6 +1695,12 @@ export interface ApiHomeHome extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::home.home'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1757,29 +1728,13 @@ export interface ApiNewNew extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slug: Attribute.UID<'api::new.new', 'title'> &
+    link: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     cover: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    author: Attribute.Relation<
-      'api::new.new',
-      'manyToOne',
-      'api::author.author'
-    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1792,34 +1747,6 @@ export interface ApiNewNew extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    contentBlocks: Attribute.DynamicZone<
-      [
-        'article.hero-section',
-        'article.text-block',
-        'article.full-width-media',
-        'article.two-images',
-        'article.text-image',
-        'article.video',
-        'article.gallery',
-        'article.quote',
-        'article.grid-image',
-        'article.image-grid',
-        'article.two-column',
-        'article.column-content',
-        'article.rich-text'
-      ]
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1842,6 +1769,7 @@ export interface ApiOhMyGadOhMyGad extends Schema.CollectionType {
     singularName: 'oh-my-gad';
     pluralName: 'oh-my-gads';
     displayName: 'oh-my-gad';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1865,24 +1793,13 @@ export interface ApiOhMyGadOhMyGad extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::oh-my-gad.oh-my-gad', 'title'> &
+    link: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    publishedAt: Attribute.DateTime;
     cover: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    author: Attribute.Relation<
-      'api::oh-my-gad.oh-my-gad',
-      'manyToOne',
-      'api::author.author'
-    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1895,36 +1812,9 @@ export interface ApiOhMyGadOhMyGad extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    contentBlocks: Attribute.DynamicZone<
-      [
-        'article.hero-section',
-        'article.text-block',
-        'article.full-width-media',
-        'article.two-images',
-        'article.text-image',
-        'article.video',
-        'article.gallery',
-        'article.quote',
-        'article.grid-image',
-        'article.image-grid',
-        'article.two-column',
-        'article.column-content',
-        'article.rich-text'
-      ]
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::oh-my-gad.oh-my-gad',
       'oneToOne',
@@ -2237,6 +2127,85 @@ export interface ApiPageContentPageContent extends Schema.SingleType {
       'api::page-content.page-content',
       'oneToMany',
       'api::page-content.page-content'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPageHistoryAndLegacyPageHistoryAndLegacy
+  extends Schema.SingleType {
+  collectionName: 'page_history_and_legacies';
+  info: {
+    singularName: 'page-history-and-legacy';
+    pluralName: 'page-history-and-legacies';
+    displayName: 'Page history and legacy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<
+      'api::page-history-and-legacy.page-history-and-legacy',
+      'title'
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Heading: Attribute.Component<'shared.heading-signature'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contentBlocks: Attribute.DynamicZone<
+      [
+        'history-legacy.media-block',
+        'history-legacy.about',
+        'case-study.grid-image',
+        'case-study.full-width-media',
+        'article.two-images',
+        'article.two-column',
+        'article.text-image'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-history-and-legacy.page-history-and-legacy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-history-and-legacy.page-history-and-legacy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-history-and-legacy.page-history-and-legacy',
+      'oneToMany',
+      'api::page-history-and-legacy.page-history-and-legacy'
     >;
     locale: Attribute.String;
   };
@@ -2605,6 +2574,11 @@ export interface ApiTransformingGadTransformingGad
           localized: true;
         };
       }>;
+    transforming_gad_appointments: Attribute.Relation<
+      'api::transforming-gad.transforming-gad',
+      'oneToMany',
+      'api::transforming-gad-appointment.transforming-gad-appointment'
+    >;
     seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2629,6 +2603,88 @@ export interface ApiTransformingGadTransformingGad
       'api::transforming-gad.transforming-gad',
       'oneToMany',
       'api::transforming-gad.transforming-gad'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiTransformingGadAppointmentTransformingGadAppointment
+  extends Schema.CollectionType {
+  collectionName: 'transforming_gad_appointments';
+  info: {
+    singularName: 'transforming-gad-appointment';
+    pluralName: 'transforming-gad-appointments';
+    displayName: 'transforming-gad-appointment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    appointment: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    date: Attribute.DateTime &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    jobInterview: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    media: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SocialLinks: Attribute.Component<'shared.social-links'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    transforming_gad: Attribute.Relation<
+      'api::transforming-gad-appointment.transforming-gad-appointment',
+      'manyToOne',
+      'api::transforming-gad.transforming-gad'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::transforming-gad-appointment.transforming-gad-appointment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::transforming-gad-appointment.transforming-gad-appointment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::transforming-gad-appointment.transforming-gad-appointment',
+      'oneToMany',
+      'api::transforming-gad-appointment.transforming-gad-appointment'
     >;
     locale: Attribute.String;
   };
@@ -2808,7 +2864,6 @@ declare module '@strapi/types' {
       'api::contents.content': ApiContentsContent;
       'api::footer.footer': ApiFooterFooter;
       'api::gad-insight.gad-insight': ApiGadInsightGadInsight;
-      'api::general-page.general-page': ApiGeneralPageGeneralPage;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::new.new': ApiNewNew;
@@ -2817,11 +2872,13 @@ declare module '@strapi/types' {
       'api::page-case.page-case': ApiPageCasePageCase;
       'api::page-contact.page-contact': ApiPageContactPageContact;
       'api::page-content.page-content': ApiPageContentPageContent;
+      'api::page-history-and-legacy.page-history-and-legacy': ApiPageHistoryAndLegacyPageHistoryAndLegacy;
       'api::pages.page': ApiPagesPage;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::segment-tag.segment-tag': ApiSegmentTagSegmentTag;
       'api::service-tag.service-tag': ApiServiceTagServiceTag;
       'api::transforming-gad.transforming-gad': ApiTransformingGadTransformingGad;
+      'api::transforming-gad-appointment.transforming-gad-appointment': ApiTransformingGadAppointmentTransformingGadAppointment;
       'api::whistleblower-channel.whistleblower-channel': ApiWhistleblowerChannelWhistleblowerChannel;
       'api::whistleblower-channel-form.whistleblower-channel-form': ApiWhistleblowerChannelFormWhistleblowerChannelForm;
     }

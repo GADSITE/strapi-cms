@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_shared_approaches",
+  "collectionName": "components_history_legacy_abouts",
   "info": {
-    "displayName": "Approach",
-    "icon": "chartCircle",
-    "description": ""
+    "displayName": "About",
+    "icon": "apps"
   },
   "options": {},
   "attributes": {

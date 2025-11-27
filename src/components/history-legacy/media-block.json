@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_history_legacy_media_blocks",
+  "info": {
+    "displayName": "Media Block",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

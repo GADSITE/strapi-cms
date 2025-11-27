@@ -4,7 +4,8 @@
   "info": {
     "singularName": "oh-my-gad",
     "pluralName": "oh-my-gads",
-    "displayName": "oh-my-gad"
+    "displayName": "oh-my-gad",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,22 +33,13 @@
         }
       }
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
+    "link": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
-    },
-    "publishedAt": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      },
+      "type": "string"
     },
     "cover": {
       "type": "media",
@@ -62,52 +54,9 @@
         }
       }
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "featured": {
       "type": "boolean",
       "default": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "contentBlocks": {
-      "type": "dynamiczone",
-      "components": [
-        "article.hero-section",
-        "article.text-block",
-        "article.full-width-media",
-        "article.two-images",
-        "article.text-image",
-        "article.video",
-        "article.gallery",
-        "article.quote",
-        "article.grid-image",
-        "article.image-grid",
-        "article.two-column",
-        "article.column-content",
-        "article.rich-text"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo",
       "pluginOptions": {
         "i18n": {
           "localized": true
