@@ -1,0 +1,27 @@
+{
+  "name": "strapi-plugin-csv-export",
+  "version": "1.0.0",
+  "description": "Plugin para exportar dados de collections em formato CSV",
+  "strapi": {
+    "name": "csv-export",
+    "icon": "plug",
+    "description": "Exportar dados de collections em formato CSV",
+    "kind": "plugin",
+    "displayName": "CSV Export"
+  },
+  "dependencies": {},
+  "author": {
+    "name": "Custom"
+  },
+  "maintainers": [
+    {
+      "name": "Custom"
+    }
+  ],
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
+

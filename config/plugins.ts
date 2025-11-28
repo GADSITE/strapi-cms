@@ -9,7 +9,8 @@ export default ({ env }) => ({
       locales: ['pt-BR', 'en', 'es'],
     },
   },
-  'import-export-entries': {
+  'csv-export': {
     enabled: true,
-  },
+    resolve: './src/plugins/strapi-plugin-csv-export',
+  }
 });
