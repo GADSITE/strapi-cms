@@ -2615,6 +2615,7 @@ export interface ApiTransformingGadAppointmentTransformingGadAppointment
     singularName: 'transforming-gad-appointment';
     pluralName: 'transforming-gad-appointments';
     displayName: 'transforming-gad-appointment';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2655,7 +2656,7 @@ export interface ApiTransformingGadAppointmentTransformingGadAppointment
           localized: true;
         };
       }>;
-    SocialLinks: Attribute.Component<'shared.social-links'> &
+    SocialLinks: Attribute.Component<'shared.social-links', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

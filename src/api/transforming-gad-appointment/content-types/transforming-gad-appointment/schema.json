@@ -4,7 +4,8 @@
   "info": {
     "singularName": "transforming-gad-appointment",
     "pluralName": "transforming-gad-appointments",
-    "displayName": "transforming-gad-appointment"
+    "displayName": "transforming-gad-appointment",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -48,11 +49,12 @@
       "type": "string"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -62,7 +64,7 @@
     "SocialLinks": {
       "displayName": "SocialLinks",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
