@@ -2,7 +2,8 @@
   "collectionName": "components_home_call_to_actions",
   "info": {
     "displayName": "CallToAction",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,11 +14,13 @@
       "type": "richtext"
     },
     "media": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": true
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "Button": {
       "type": "component",

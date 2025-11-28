@@ -2179,7 +2179,11 @@ export interface ApiPageHistoryAndLegacyPageHistoryAndLegacy
         'case-study.full-width-media',
         'article.two-images',
         'article.two-column',
-        'article.text-image'
+        'article.text-image',
+        'history-legacy.about-two-images',
+        'case-study.image-grid',
+        'case-study.hero-section',
+        'case-study.gallery'
       ]
     > &
       Attribute.SetPluginOptions<{

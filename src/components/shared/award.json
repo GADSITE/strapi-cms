@@ -1,9 +1,24 @@
 {
-    "collectionName": "components_content_blocks_awards",
-    "info": { "displayName": "Award" },
-    "attributes": {
-      "name": { "type": "string" },
-      "logo": { "type": "media" },
-      "year": { "type": "string" }
+  "collectionName": "components_content_blocks_awards",
+  "info": {
+    "displayName": "Award",
+    "description": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "year": {
+      "type": "string"
     }
   }
+}

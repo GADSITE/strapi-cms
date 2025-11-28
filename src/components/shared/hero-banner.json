@@ -1,10 +1,33 @@
 {
-    "collectionName": "components_content_blocks_hero_banners",
-    "info": { "displayName": "Hero Banner" },
-    "attributes": {
-      "title": { "type": "string" },
-      "subtitle": { "type": "string" },
-      "background_image": { "type": "media" },
-      "video": { "type": "media" }
+  "collectionName": "components_content_blocks_hero_banners",
+  "info": {
+    "displayName": "Hero Banner",
+    "description": ""
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   }
+}

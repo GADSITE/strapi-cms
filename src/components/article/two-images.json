@@ -12,13 +12,19 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "image2": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "caption1": {
       "type": "string"

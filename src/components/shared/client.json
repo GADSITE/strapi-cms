@@ -1,8 +1,21 @@
 {
-    "collectionName": "components_content_blocks_clients",
-    "info": { "displayName": "Client" },
-    "attributes": {
-      "name": { "type": "string" },
-      "logo": { "type": "media" }
+  "collectionName": "components_content_blocks_clients",
+  "info": {
+    "displayName": "Client",
+    "description": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   }
+}

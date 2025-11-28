@@ -41,10 +41,11 @@ export interface SharedVideoBlock extends Schema.Component {
   collectionName: 'components_content_blocks_video_blocks';
   info: {
     displayName: 'Video Block';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    video: Attribute.Media;
+    video: Attribute.Media<'images' | 'videos'>;
     autoplay: Attribute.Boolean;
   };
 }
@@ -94,7 +95,7 @@ export interface SharedSlider extends Schema.Component {
     description: '';
   };
   attributes: {
-    files: Attribute.Media<'images', true>;
+    files: Attribute.Media<'images' | 'videos', true>;
   };
 }
 
@@ -138,7 +139,7 @@ export interface SharedSeo extends Schema.Component {
           localized: true;
         };
       }>;
-    shareImage: Attribute.Media<'images'> &
+    shareImage: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -235,12 +236,13 @@ export interface SharedHeroBanner extends Schema.Component {
   collectionName: 'components_content_blocks_hero_banners';
   info: {
     displayName: 'Hero Banner';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.String;
-    background_image: Attribute.Media;
-    video: Attribute.Media;
+    background_image: Attribute.Media<'images' | 'videos'>;
+    video: Attribute.Media<'images' | 'videos'>;
   };
 }
 
@@ -326,10 +328,11 @@ export interface SharedClient extends Schema.Component {
   collectionName: 'components_content_blocks_clients';
   info: {
     displayName: 'Client';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
-    logo: Attribute.Media;
+    logo: Attribute.Media<'images' | 'videos'>;
   };
 }
 
@@ -337,11 +340,12 @@ export interface SharedChapter extends Schema.Component {
   collectionName: 'components_content_blocks_chapters';
   info: {
     displayName: 'Chapter';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     content: Attribute.RichText;
-    media: Attribute.Media;
+    media: Attribute.Media<'images' | 'videos'>;
   };
 }
 
@@ -406,6 +410,7 @@ export interface SharedAwardsAndClients extends Schema.Component {
   collectionName: 'components_content_blocks_awards_clients';
   info: {
     displayName: 'Awards and Clients';
+    description: '';
   };
   attributes: {
     awards: Attribute.Component<'shared.award', true>;
@@ -417,10 +422,11 @@ export interface SharedAward extends Schema.Component {
   collectionName: 'components_content_blocks_awards';
   info: {
     displayName: 'Award';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
-    logo: Attribute.Media;
+    logo: Attribute.Media<'images' | 'videos'>;
     year: Attribute.String;
   };
 }
@@ -431,30 +437,6 @@ export interface SharedApproach extends Schema.Component {
     displayName: 'Approach';
     icon: 'chartCircle';
     description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.RichText;
-    media: Attribute.Media<'images' | 'videos'>;
-  };
-}
-
-export interface HistoryLegacyMediaBlock extends Schema.Component {
-  collectionName: 'components_history_legacy_media_blocks';
-  info: {
-    displayName: 'Media Block';
-    icon: 'apps';
-  };
-  attributes: {
-    media: Attribute.Media<'images' | 'videos'>;
-  };
-}
-
-export interface HistoryLegacyAbout extends Schema.Component {
-  collectionName: 'components_history_legacy_abouts';
-  info: {
-    displayName: 'About';
-    icon: 'apps';
   };
   attributes: {
     title: Attribute.String;
@@ -508,12 +490,51 @@ export interface HomeCallToAction extends Schema.Component {
   info: {
     displayName: 'CallToAction';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.RichText;
-    media: Attribute.Media<'images', true>;
+    media: Attribute.Media<'images' | 'videos', true>;
     Button: Attribute.Component<'shared.button'>;
+  };
+}
+
+export interface HistoryLegacyMediaBlock extends Schema.Component {
+  collectionName: 'components_history_legacy_media_blocks';
+  info: {
+    displayName: 'Media Block';
+    icon: 'apps';
+  };
+  attributes: {
+    media: Attribute.Media<'images' | 'videos'>;
+  };
+}
+
+export interface HistoryLegacyAbout extends Schema.Component {
+  collectionName: 'components_history_legacy_abouts';
+  info: {
+    displayName: 'About';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos'>;
+  };
+}
+
+export interface HistoryLegacyAboutTwoImages extends Schema.Component {
+  collectionName: 'components_history_legacy_about_two_images';
+  info: {
+    displayName: 'About Two Images';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos'>;
+    mediaTwo: Attribute.Media<'images' | 'videos'>;
   };
 }
 
@@ -573,7 +594,7 @@ export interface CaseStudyTextImage extends Schema.Component {
   attributes: {
     title: Attribute.String;
     text: Attribute.RichText;
-    image: Attribute.Media<'images'>;
+    image: Attribute.Media<'images' | 'videos'>;
     imagePosition: Attribute.Enumeration<['left', 'right']> &
       Attribute.DefaultTo<'right'>;
     background: Attribute.String;
@@ -660,7 +681,7 @@ export interface CaseStudyGridImage extends Schema.Component {
     description: 'Imagem individual para o grid com legenda opcional';
   };
   attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
+    image: Attribute.Media<'images' | 'videos'> & Attribute.Required;
     caption: Attribute.String;
     link: Attribute.String;
   };
@@ -674,7 +695,7 @@ export interface CaseStudyGallery extends Schema.Component {
     description: 'Bloco de galeria de imagens';
   };
   attributes: {
-    images: Attribute.Media<'images', true>;
+    images: Attribute.Media<'images' | 'videos', true>;
     layout: Attribute.Enumeration<['2-columns', '3-columns', 'masonry']> &
       Attribute.DefaultTo<'3-columns'>;
     showCaptions: Attribute.Boolean & Attribute.DefaultTo<false>;
@@ -724,7 +745,7 @@ export interface ArticleVideo extends Schema.Component {
   };
   attributes: {
     video: Attribute.Media<'videos'> & Attribute.Required;
-    poster: Attribute.Media<'images'>;
+    poster: Attribute.Media<'images' | 'videos'>;
     caption: Attribute.String;
     autoplay: Attribute.Boolean & Attribute.DefaultTo<false>;
     controls: Attribute.Boolean & Attribute.DefaultTo<true>;
@@ -740,8 +761,8 @@ export interface ArticleTwoImages extends Schema.Component {
     description: 'Display two images side by side';
   };
   attributes: {
-    image1: Attribute.Media<'images'> & Attribute.Required;
-    image2: Attribute.Media<'images'> & Attribute.Required;
+    image1: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    image2: Attribute.Media<'images' | 'videos'> & Attribute.Required;
     caption1: Attribute.String;
     caption2: Attribute.String;
   };
@@ -773,7 +794,7 @@ export interface ArticleTextImage extends Schema.Component {
   };
   attributes: {
     text: Attribute.RichText & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
+    image: Attribute.Media<'images' | 'videos'> & Attribute.Required;
     imagePosition: Attribute.Enumeration<['left', 'right']> &
       Attribute.DefaultTo<'left'>;
     caption: Attribute.String;
@@ -843,7 +864,7 @@ export interface ArticleImageGrid extends Schema.Component {
     description: 'Grid layout with multiple images';
   };
   attributes: {
-    images: Attribute.Media<'images', true> & Attribute.Required;
+    images: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
     title: Attribute.String;
     columns: Attribute.Integer &
       Attribute.SetMinMax<
@@ -892,7 +913,7 @@ export interface ArticleGridImage extends Schema.Component {
     description: 'Single image in a grid layout';
   };
   attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
+    image: Attribute.Media<'images' | 'videos'> & Attribute.Required;
     caption: Attribute.String;
     gridSize: Attribute.Enumeration<['small', 'medium', 'large']> &
       Attribute.DefaultTo<'medium'>;
@@ -908,7 +929,7 @@ export interface ArticleGallery extends Schema.Component {
     description: 'Image gallery with multiple images';
   };
   attributes: {
-    images: Attribute.Media<'images', true> & Attribute.Required;
+    images: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
     title: Attribute.String;
     description: Attribute.Text;
   };
@@ -938,7 +959,7 @@ export interface ArticleColumnItem extends Schema.Component {
   attributes: {
     title: Attribute.String;
     content: Attribute.RichText & Attribute.Required;
-    image: Attribute.Media<'images'>;
+    image: Attribute.Media<'images' | 'videos'>;
   };
 }
 
@@ -996,12 +1017,13 @@ declare module '@strapi/types' {
       'shared.awards-and-clients': SharedAwardsAndClients;
       'shared.award': SharedAward;
       'shared.approach': SharedApproach;
-      'history-legacy.media-block': HistoryLegacyMediaBlock;
-      'history-legacy.about': HistoryLegacyAbout;
       'home.sub-title': HomeSubTitle;
       'home.slider': HomeSlider;
       'home.cases': HomeCases;
       'home.call-to-action': HomeCallToAction;
+      'history-legacy.media-block': HistoryLegacyMediaBlock;
+      'history-legacy.about': HistoryLegacyAbout;
+      'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
       'case-study.video': CaseStudyVideo;
       'case-study.two-images': CaseStudyTwoImages;
       'case-study.two-column': CaseStudyTwoColumn;
