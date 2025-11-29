@@ -553,6 +553,20 @@ export interface GadInsightsSlider extends Schema.Component {
   };
 }
 
+export interface GadInsightsReview extends Schema.Component {
+  collectionName: 'components_gad_insights_reviews';
+  info: {
+    displayName: 'Review';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.RichText;
+    insight: Attribute.Boolean;
+  };
+}
+
 export interface GadInsightsInsights extends Schema.Component {
   collectionName: 'components_gad_insights_insights';
   info: {
@@ -1069,6 +1083,7 @@ declare module '@strapi/types' {
       'history-legacy.about': HistoryLegacyAbout;
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
       'gad-insights.slider': GadInsightsSlider;
+      'gad-insights.review': GadInsightsReview;
       'gad-insights.insights': GadInsightsInsights;
       'gad-insights.content-slider': GadInsightsContentSlider;
       'case-study.video': CaseStudyVideo;

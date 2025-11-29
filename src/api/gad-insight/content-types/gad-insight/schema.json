@@ -81,6 +81,17 @@
         }
       }
     },
+    "review": {
+      "displayName": "Review",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "gad-insights.review"
+    },
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [

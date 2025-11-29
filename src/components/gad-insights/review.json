@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_gad_insights_reviews",
+  "info": {
+    "displayName": "Review",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "insight": {
+      "type": "boolean"
+    }
+  }
+}
