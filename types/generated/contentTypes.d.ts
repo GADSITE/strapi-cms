@@ -1573,7 +1573,7 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    review: Attribute.Component<'gad-insights.review', true> &
+    review: Attribute.Component<'gad-insights.review'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
