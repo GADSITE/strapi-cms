@@ -1541,6 +1541,13 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    subTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1548,6 +1555,12 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }>;
     slug: Attribute.UID<'api::gad-insight.gad-insight', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    paperLink: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1589,12 +1602,6 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    paperLink: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
