@@ -34,14 +34,6 @@
         }
       }
     },
-    "description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "slug": {
       "type": "uid",
       "targetField": "title",
@@ -81,17 +73,6 @@
         }
       }
     },
-    "review": {
-      "displayName": "Review",
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "gad-insights.review"
-    },
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
@@ -126,6 +107,17 @@
           "localized": true
         }
       }
+    },
+    "review": {
+      "displayName": "Review",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "gad-insights.review"
     }
   }
 }
