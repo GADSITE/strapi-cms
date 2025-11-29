@@ -1593,7 +1593,8 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         'article.image-grid',
         'article.two-column',
         'article.column-content',
-        'article.rich-text'
+        'article.rich-text',
+        'gad-insights.insights'
       ]
     > &
       Attribute.SetPluginOptions<{
