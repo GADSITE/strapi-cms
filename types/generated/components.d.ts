@@ -567,6 +567,19 @@ export interface GadInsightsReview extends Schema.Component {
   };
 }
 
+export interface GadInsightsQuote extends Schema.Component {
+  collectionName: 'components_gad_insights_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'archive';
+  };
+  attributes: {
+    quote: Attribute.Text;
+    author: Attribute.String;
+    authorRole: Attribute.String;
+  };
+}
+
 export interface GadInsightsInsights extends Schema.Component {
   collectionName: 'components_gad_insights_insights';
   info: {
@@ -1084,6 +1097,7 @@ declare module '@strapi/types' {
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
       'gad-insights.slider': GadInsightsSlider;
       'gad-insights.review': GadInsightsReview;
+      'gad-insights.quote': GadInsightsQuote;
       'gad-insights.insights': GadInsightsInsights;
       'gad-insights.content-slider': GadInsightsContentSlider;
       'case-study.video': CaseStudyVideo;

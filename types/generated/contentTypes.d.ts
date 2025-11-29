@@ -1548,12 +1548,6 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     slug: Attribute.UID<'api::gad-insight.gad-insight', 'title'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1579,30 +1573,8 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    review: Attribute.Component<'gad-insights.review'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     contentBlocks: Attribute.DynamicZone<
-      [
-        'article.hero-section',
-        'article.text-block',
-        'article.full-width-media',
-        'article.two-images',
-        'article.text-image',
-        'article.video',
-        'article.gallery',
-        'article.quote',
-        'article.grid-image',
-        'article.image-grid',
-        'article.two-column',
-        'article.column-content',
-        'article.rich-text',
-        'gad-insights.insights',
-        'gad-insights.slider'
-      ]
+      ['gad-insights.insights', 'gad-insights.slider', 'gad-insights.quote']
     > &
       Attribute.SetPluginOptions<{
         i18n: {

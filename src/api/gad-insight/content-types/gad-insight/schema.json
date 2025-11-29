@@ -73,24 +73,24 @@
         }
       }
     },
+    "review": {
+      "displayName": "Review",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "gad-insights.review"
+    }
+  },
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
-        "article.hero-section",
-        "article.text-block",
-        "article.full-width-media",
-        "article.two-images",
-        "article.text-image",
-        "article.video",
-        "article.gallery",
-        "article.quote",
-        "article.grid-image",
-        "article.image-grid",
-        "article.two-column",
-        "article.column-content",
-        "article.rich-text",
         "gad-insights.insights",
-        "gad-insights.slider"
+        "gad-insights.slider",
+        "gad-insights.quote"
       ],
       "pluginOptions": {
         "i18n": {
@@ -107,17 +107,5 @@
           "localized": true
         }
       }
-    },
-    "review": {
-      "displayName": "Review",
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "gad-insights.review"
     }
-  }
 }

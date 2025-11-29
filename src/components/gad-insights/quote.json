@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_gad_insights_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "authorRole": {
+      "type": "string"
+    }
+  }
+}
