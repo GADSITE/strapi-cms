@@ -96,7 +96,8 @@
         "article.image-grid",
         "article.two-column",
         "article.column-content",
-        "article.rich-text"
+        "article.rich-text",
+        "gad-insights.insights"
       ],
       "pluginOptions": {
         "i18n": {
