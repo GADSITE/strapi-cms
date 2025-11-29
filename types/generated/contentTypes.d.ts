@@ -2521,6 +2521,12 @@ export interface ApiTransformingGadTransformingGad
           localized: true;
         };
       }>;
+    subTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2528,6 +2534,18 @@ export interface ApiTransformingGadTransformingGad
         };
       }>;
     slug: Attribute.UID<'api::transforming-gad.transforming-gad', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    logo: Attribute.Media<'images' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    theme: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2556,52 +2574,12 @@ export interface ApiTransformingGadTransformingGad
         };
       }> &
       Attribute.DefaultTo<false>;
-    contentBlocks: Attribute.DynamicZone<
-      [
-        'article.hero-section',
-        'article.text-block',
-        'article.full-width-media',
-        'article.two-images',
-        'article.text-image',
-        'article.video',
-        'article.gallery',
-        'article.quote',
-        'article.grid-image',
-        'article.image-grid',
-        'article.two-column',
-        'article.column-content',
-        'article.rich-text'
-      ]
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     transforming_gad_appointments: Attribute.Relation<
       'api::transforming-gad.transforming-gad',
       'oneToMany',
       'api::transforming-gad-appointment.transforming-gad-appointment'
     >;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    logo: Attribute.Media<'images' | 'videos'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    theme: Attribute.Media<'images' | 'videos'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    subTitle: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
