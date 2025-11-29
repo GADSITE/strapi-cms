@@ -2503,6 +2503,7 @@ export interface ApiTransformingGadTransformingGad
     singularName: 'transforming-gad';
     pluralName: 'transforming-gads';
     displayName: 'transforming-gad';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2532,7 +2533,6 @@ export interface ApiTransformingGadTransformingGad
           localized: true;
         };
       }>;
-    publishedAt: Attribute.DateTime;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2589,8 +2589,21 @@ export interface ApiTransformingGadTransformingGad
           localized: true;
         };
       }>;
+    logo: Attribute.Media<'images' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    theme: Attribute.Media<'images' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::transforming-gad.transforming-gad',
       'oneToOne',

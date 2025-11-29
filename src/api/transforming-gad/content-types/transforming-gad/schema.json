@@ -4,7 +4,8 @@
   "info": {
     "singularName": "transforming-gad",
     "pluralName": "transforming-gads",
-    "displayName": "transforming-gad"
+    "displayName": "transforming-gad",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -35,14 +36,6 @@
     "slug": {
       "type": "uid",
       "targetField": "title",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "publishedAt": {
-      "type": "datetime",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -114,6 +107,32 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "theme": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
