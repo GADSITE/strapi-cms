@@ -1573,6 +1573,12 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
+    review: Attribute.Component<'gad-insights.review', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     contentBlocks: Attribute.DynamicZone<
       ['gad-insights.insights', 'gad-insights.slider', 'gad-insights.quote']
     > &
