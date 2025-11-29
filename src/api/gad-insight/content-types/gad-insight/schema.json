@@ -97,7 +97,8 @@
         "article.two-column",
         "article.column-content",
         "article.rich-text",
-        "gad-insights.insights"
+        "gad-insights.insights",
+        "gad-insights.slider"
       ],
       "pluginOptions": {
         "i18n": {

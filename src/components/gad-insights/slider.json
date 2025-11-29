@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_gad_insights_sliders",
+  "info": {
+    "displayName": "Slider",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "contentSlider": {
+      "displayName": "contentSlider",
+      "type": "component",
+      "repeatable": true,
+      "component": "gad-insights.content-slider"
+    }
+  }
+}

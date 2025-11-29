@@ -542,6 +542,17 @@ export interface HistoryLegacyAboutTwoImages extends Schema.Component {
   };
 }
 
+export interface GadInsightsSlider extends Schema.Component {
+  collectionName: 'components_gad_insights_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'apps';
+  };
+  attributes: {
+    contentSlider: Attribute.Component<'gad-insights.content-slider', true>;
+  };
+}
+
 export interface GadInsightsInsights extends Schema.Component {
   collectionName: 'components_gad_insights_insights';
   info: {
@@ -550,6 +561,21 @@ export interface GadInsightsInsights extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos'>;
+    mediaPosition: Attribute.Enumeration<['left', 'right']>;
+  };
+}
+
+export interface GadInsightsContentSlider extends Schema.Component {
+  collectionName: 'components_gad_insights_content_sliders';
+  info: {
+    displayName: 'contentSlider';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
     mediaPosition: Attribute.Enumeration<['left', 'right']>;
@@ -1042,7 +1068,9 @@ declare module '@strapi/types' {
       'history-legacy.media-block': HistoryLegacyMediaBlock;
       'history-legacy.about': HistoryLegacyAbout;
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
+      'gad-insights.slider': GadInsightsSlider;
       'gad-insights.insights': GadInsightsInsights;
+      'gad-insights.content-slider': GadInsightsContentSlider;
       'case-study.video': CaseStudyVideo;
       'case-study.two-images': CaseStudyTwoImages;
       'case-study.two-column': CaseStudyTwoColumn;
