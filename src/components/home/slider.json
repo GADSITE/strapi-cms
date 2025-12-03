@@ -2,13 +2,15 @@
   "collectionName": "components_home_sliders",
   "info": {
     "displayName": "Slider",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "media": {
       "type": "media",
       "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
@@ -22,6 +24,9 @@
     },
     "title": {
       "type": "string"
+    },
+    "visible": {
+      "type": "boolean"
     }
   },
   "config": {}

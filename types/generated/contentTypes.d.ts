@@ -1387,12 +1387,13 @@ export interface ApiContentsContent extends Schema.CollectionType {
         };
       }>;
     slug: Attribute.UID<'api::contents.content', 'title'>;
-    type: Attribute.Enumeration<['article', 'external', 'insight']> &
+    type: Attribute.Enumeration<['large', 'slim']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'slim'>;
     excerpt: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1560,6 +1561,13 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    type: Attribute.Enumeration<['large', 'slim']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'slim'>;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1727,6 +1735,13 @@ export interface ApiNewNew extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    type: Attribute.Enumeration<['large', 'slim']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'slim'>;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1792,6 +1807,13 @@ export interface ApiOhMyGadOhMyGad extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    type: Attribute.Enumeration<['large', 'slim']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'slim'>;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2532,18 +2554,19 @@ export interface ApiTransformingGadTransformingGad
           localized: true;
         };
       }>;
-    logo: Attribute.Media<'images' | 'videos'> &
+    header: Attribute.Component<'shared.header'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    theme: Attribute.Media<'images' | 'videos'> &
+    type: Attribute.Enumeration<['large', 'slim']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'slim'>;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {

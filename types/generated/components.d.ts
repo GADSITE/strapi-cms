@@ -237,6 +237,20 @@ export interface SharedHeadingSignature extends Schema.Component {
   };
 }
 
+export interface SharedHeader extends Schema.Component {
+  collectionName: 'components_shared_headers';
+  info: {
+    displayName: 'header';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    image1: Attribute.Media<'images' | 'videos'>;
+    image2: Attribute.Media<'images' | 'videos'>;
+    image3: Attribute.Media<'images' | 'videos'>;
+  };
+}
+
 export interface SharedFormType extends Schema.Component {
   collectionName: 'components_shared_form_types';
   info: {
@@ -408,6 +422,63 @@ export interface SharedApproach extends Schema.Component {
   };
 }
 
+export interface HomeSubTitle extends Schema.Component {
+  collectionName: 'components_home_sub_titles';
+  info: {
+    displayName: 'SubTitle';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Attribute.String;
+  };
+}
+
+export interface HomeSlider extends Schema.Component {
+  collectionName: 'components_home_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    media: Attribute.Media<'images' | 'files' | 'videos'>;
+    subTitle: Attribute.Component<'home.sub-title', true>;
+    title: Attribute.String;
+    visible: Attribute.Boolean;
+  };
+}
+
+export interface HomeCases extends Schema.Component {
+  collectionName: 'components_home_cases';
+  info: {
+    displayName: 'Cases';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Attribute.RichText;
+    cases: Attribute.Relation<
+      'home.cases',
+      'oneToMany',
+      'api::cases.case-study'
+    >;
+  };
+}
+
+export interface HomeCallToAction extends Schema.Component {
+  collectionName: 'components_home_call_to_actions';
+  info: {
+    displayName: 'CallToAction';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos', true>;
+    Button: Attribute.Component<'shared.button'>;
+  };
+}
+
 export interface PrivacySectionText extends Schema.Component {
   collectionName: 'components_privacy_section_texts';
   info: {
@@ -442,61 +513,6 @@ export interface PrivacyListItem extends Schema.Component {
   attributes: {
     label: Attribute.String;
     description: Attribute.Text;
-  };
-}
-
-export interface HomeSubTitle extends Schema.Component {
-  collectionName: 'components_home_sub_titles';
-  info: {
-    displayName: 'SubTitle';
-    icon: 'bulletList';
-  };
-  attributes: {
-    description: Attribute.String;
-  };
-}
-
-export interface HomeSlider extends Schema.Component {
-  collectionName: 'components_home_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'apps';
-  };
-  attributes: {
-    media: Attribute.Media<'images' | 'files' | 'videos'>;
-    subTitle: Attribute.Component<'home.sub-title', true>;
-    title: Attribute.String;
-  };
-}
-
-export interface HomeCases extends Schema.Component {
-  collectionName: 'components_home_cases';
-  info: {
-    displayName: 'Cases';
-    icon: 'apps';
-  };
-  attributes: {
-    description: Attribute.RichText;
-    cases: Attribute.Relation<
-      'home.cases',
-      'oneToMany',
-      'api::cases.case-study'
-    >;
-  };
-}
-
-export interface HomeCallToAction extends Schema.Component {
-  collectionName: 'components_home_call_to_actions';
-  info: {
-    displayName: 'CallToAction';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.RichText;
-    media: Attribute.Media<'images' | 'videos', true>;
-    Button: Attribute.Component<'shared.button'>;
   };
 }
 
@@ -1072,6 +1088,7 @@ declare module '@strapi/types' {
       'shared.hero-banner': SharedHeroBanner;
       'shared.heading': SharedHeading;
       'shared.heading-signature': SharedHeadingSignature;
+      'shared.header': SharedHeader;
       'shared.form-type': SharedFormType;
       'shared.form-block': SharedFormBlock;
       'shared.cta-section': SharedCtaSection;
@@ -1085,13 +1102,13 @@ declare module '@strapi/types' {
       'shared.awards-and-clients': SharedAwardsAndClients;
       'shared.award': SharedAward;
       'shared.approach': SharedApproach;
-      'privacy.section-text': PrivacySectionText;
-      'privacy.section-list': PrivacySectionList;
-      'privacy.list-item': PrivacyListItem;
       'home.sub-title': HomeSubTitle;
       'home.slider': HomeSlider;
       'home.cases': HomeCases;
       'home.call-to-action': HomeCallToAction;
+      'privacy.section-text': PrivacySectionText;
+      'privacy.section-list': PrivacySectionList;
+      'privacy.list-item': PrivacyListItem;
       'history-legacy.media-block': HistoryLegacyMediaBlock;
       'history-legacy.about': HistoryLegacyAbout;
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
