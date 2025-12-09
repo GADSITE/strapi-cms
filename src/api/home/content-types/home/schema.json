@@ -33,7 +33,7 @@
       "repeatable": false,
       "component": "home.call-to-action"
     },
-    "intro": {
+    "Intro": {
       "displayName": "Intro",
       "type": "component",
       "repeatable": false,

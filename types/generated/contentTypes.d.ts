@@ -1755,7 +1755,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     SliderHome: Attribute.Component<'home.slider', true>;
     Cases: Attribute.Component<'home.cases'>;
     CallToAction: Attribute.Component<'home.call-to-action'>;
-    intro: Attribute.Component<'home.intro'> &
+    Intro: Attribute.Component<'home.intro'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
