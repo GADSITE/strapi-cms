@@ -1139,6 +1139,11 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
         'case-study.column-content'
       ]
     >;
+    caseFullTags: Attribute.Relation<
+      'api::cases.case-study',
+      'oneToMany',
+      'api::full-tag.full-tag'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
