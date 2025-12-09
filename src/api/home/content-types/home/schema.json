@@ -32,6 +32,17 @@
       "type": "component",
       "repeatable": false,
       "component": "home.call-to-action"
+    },
+    "Intro": {
+      "displayName": "Intro",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.intro"
     }
   }
 }

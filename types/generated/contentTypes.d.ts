@@ -922,6 +922,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    type: Attribute.Enumeration<['large', 'slim']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'slim'>;
     publishedAt: Attribute.DateTime;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
@@ -1131,6 +1138,11 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
         'case-study.two-column',
         'case-study.column-content'
       ]
+    >;
+    caseFullTags: Attribute.Relation<
+      'api::cases.case-study',
+      'oneToMany',
+      'api::full-tag.full-tag'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1518,6 +1530,60 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiFullTagFullTag extends Schema.CollectionType {
+  collectionName: 'full_tags';
+  info: {
+    singularName: 'full-tag';
+    pluralName: 'full-tags';
+    displayName: 'Case Full Tags';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::full-tag.full-tag', 'name'>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::full-tag.full-tag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::full-tag.full-tag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::full-tag.full-tag',
+      'oneToMany',
+      'api::full-tag.full-tag'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiGadInsightGadInsight extends Schema.CollectionType {
   collectionName: 'gad_insights';
   info: {
@@ -1689,6 +1755,12 @@ export interface ApiHomeHome extends Schema.SingleType {
     SliderHome: Attribute.Component<'home.slider', true>;
     Cases: Attribute.Component<'home.cases'>;
     CallToAction: Attribute.Component<'home.call-to-action'>;
+    Intro: Attribute.Component<'home.intro'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2881,6 +2953,7 @@ declare module '@strapi/types' {
       'api::contact-form-origins-insight.contact-form-origins-insight': ApiContactFormOriginsInsightContactFormOriginsInsight;
       'api::contents.content': ApiContentsContent;
       'api::footer.footer': ApiFooterFooter;
+      'api::full-tag.full-tag': ApiFullTagFullTag;
       'api::gad-insight.gad-insight': ApiGadInsightGadInsight;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;

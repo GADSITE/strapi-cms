@@ -30,12 +30,20 @@
     "thumb": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "videos"]
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "imageFeatured": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "videos"]
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "type": {
       "type": "enumeration",
@@ -44,7 +52,6 @@
         "slim"
       ]
     },
-
     "order": {
       "type": "integer"
     },
@@ -52,16 +59,16 @@
       "type": "boolean",
       "default": false
     },
-     "segmentTags": {
-       "type": "relation",
-       "relation": "manyToMany",
-       "target": "api::segment-tag.segment-tag"
-     },
-     "serviceTags": {
-       "type": "relation",
-       "relation": "manyToMany",
-       "target": "api::service-tag.service-tag"
-     },
+    "segmentTags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::segment-tag.segment-tag"
+    },
+    "serviceTags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service-tag.service-tag"
+    },
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
@@ -78,6 +85,11 @@
         "case-study.two-column",
         "case-study.column-content"
       ]
+    },
+    "caseFullTags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::full-tag.full-tag"
     }
   }
 }

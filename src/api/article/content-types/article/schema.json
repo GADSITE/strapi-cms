@@ -42,6 +42,19 @@
         }
       }
     },
+    "type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "slim"
+      ],
+      "default": "slim"
+    },
     "publishedAt": {
       "type": "datetime",
       "pluginOptions": {
