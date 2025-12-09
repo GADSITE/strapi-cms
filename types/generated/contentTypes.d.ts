@@ -1518,6 +1518,60 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiFullTagFullTag extends Schema.CollectionType {
+  collectionName: 'full_tags';
+  info: {
+    singularName: 'full-tag';
+    pluralName: 'full-tags';
+    displayName: 'Case Full Tags';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::full-tag.full-tag', 'name'>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::full-tag.full-tag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::full-tag.full-tag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::full-tag.full-tag',
+      'oneToMany',
+      'api::full-tag.full-tag'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiGadInsightGadInsight extends Schema.CollectionType {
   collectionName: 'gad_insights';
   info: {
@@ -2881,6 +2935,7 @@ declare module '@strapi/types' {
       'api::contact-form-origins-insight.contact-form-origins-insight': ApiContactFormOriginsInsightContactFormOriginsInsight;
       'api::contents.content': ApiContentsContent;
       'api::footer.footer': ApiFooterFooter;
+      'api::full-tag.full-tag': ApiFullTagFullTag;
       'api::gad-insight.gad-insight': ApiGadInsightGadInsight;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
