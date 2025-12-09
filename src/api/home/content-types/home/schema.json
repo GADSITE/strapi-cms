@@ -34,7 +34,7 @@
       "component": "home.call-to-action"
     },
     "intro": {
-      "displayName": "intro",
+      "displayName": "Intro",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
