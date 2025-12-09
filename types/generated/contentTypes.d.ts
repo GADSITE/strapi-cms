@@ -922,6 +922,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    type: Attribute.Enumeration<['large', 'slim']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'slim'>;
     publishedAt: Attribute.DateTime;
     cover: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
@@ -1743,6 +1750,12 @@ export interface ApiHomeHome extends Schema.SingleType {
     SliderHome: Attribute.Component<'home.slider', true>;
     Cases: Attribute.Component<'home.cases'>;
     CallToAction: Attribute.Component<'home.call-to-action'>;
+    intro: Attribute.Component<'home.intro'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

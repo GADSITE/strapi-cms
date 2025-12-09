@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_intros",
+  "info": {
+    "displayName": "intro",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
