@@ -2561,10 +2561,10 @@ export interface ApiServiceTagServiceTag extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    case_segment_tags: Attribute.Relation<
+    caseFullTags: Attribute.Relation<
       'api::service-tag.service-tag',
       'oneToMany',
-      'api::segment-tag.segment-tag'
+      'api::full-tag.full-tag'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

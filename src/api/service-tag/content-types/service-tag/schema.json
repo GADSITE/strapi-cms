@@ -37,10 +37,10 @@
         }
       }
     },
-    "case_segment_tags": {
+    "caseFullTags": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::segment-tag.segment-tag"
+      "target": "api::full-tag.full-tag"
     }
   }
 }
