@@ -1,18 +1,28 @@
 {
-    "collectionName": "components_case_study_quotes",
-    "info": {
-      "displayName": "Quote",
-      "icon": "quote",
-      "description": "Citação ou frase de destaque"
+  "collectionName": "components_case_study_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "quote",
+    "description": "Citação ou frase de destaque"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "string"
     },
-    "options": {},
-    "attributes": {
-      "quote": { "type": "text" },
-      "author": { "type": "string" },
-      "style": {
-        "type": "enumeration",
-        "enum": ["center", "side"],
-        "default": "center"
-      }
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "center",
+        "side"
+      ],
+      "default": "center"
+    },
+    "quote": {
+      "type": "richtext"
+    },
+    "authorRole": {
+      "type": "string"
     }
   }
+}
