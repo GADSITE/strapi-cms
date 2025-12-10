@@ -21,6 +21,11 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "ListAwards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-awards"
     }
   }
 }

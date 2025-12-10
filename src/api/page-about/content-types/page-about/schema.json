@@ -97,6 +97,16 @@
         }
       },
       "component": "shared.approach"
+    },
+    "Awards": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.awards"
     }
   }
 }

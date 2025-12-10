@@ -393,6 +393,7 @@ export interface SharedAwards extends Schema.Component {
     media: Attribute.Media<'images' | 'videos'>;
     title: Attribute.String;
     description: Attribute.RichText;
+    ListAwards: Attribute.Component<'shared.list-awards', true>;
   };
 }
 
