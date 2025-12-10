@@ -43,7 +43,7 @@
       },
       "component": "shared.heading"
     },
-    "CallToAction": {
+    "History": {
       "displayName": "CallToAction",
       "type": "component",
       "repeatable": false,
@@ -54,7 +54,7 @@
       },
       "component": "shared.call-to-action"
     },
-    "Awards": {
+    "About": {
       "displayName": "Awards",
       "type": "component",
       "repeatable": false,

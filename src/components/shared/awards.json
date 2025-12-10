@@ -7,12 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "ListAwards": {
-      "displayName": "ListAwards",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.list-awards"
-    },
     "media": {
       "type": "media",
       "multiple": false,
@@ -24,6 +18,9 @@
     },
     "title": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

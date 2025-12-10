@@ -1981,13 +1981,13 @@ export interface ApiPageAboutPageAbout extends Schema.SingleType {
           localized: true;
         };
       }>;
-    CallToAction: Attribute.Component<'shared.call-to-action'> &
+    History: Attribute.Component<'shared.call-to-action'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Awards: Attribute.Component<'shared.awards'> &
+    About: Attribute.Component<'shared.awards'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

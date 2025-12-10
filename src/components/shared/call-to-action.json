@@ -10,18 +10,6 @@
     "description": {
       "type": "text"
     },
-    "Button": {
-      "displayName": "Button",
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.button"
-    },
-    "List": {
-      "displayName": "List",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.list"
-    },
     "media": {
       "type": "media",
       "multiple": false,
