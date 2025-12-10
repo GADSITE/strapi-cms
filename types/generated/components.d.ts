@@ -503,11 +503,12 @@ export interface HomeCollaborators extends Schema.Component {
   info: {
     displayName: 'Collaborators';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    button: Attribute.Component<'shared.button', true>;
+    button: Attribute.Component<'shared.button'>;
   };
 }
 
