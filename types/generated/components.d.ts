@@ -1,5 +1,42 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface PrivacySectionText extends Schema.Component {
+  collectionName: 'components_privacy_section_texts';
+  info: {
+    displayName: 'Se\u00E7\u00E3o (Texto)';
+    icon: 'align-left';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+  };
+}
+
+export interface PrivacySectionList extends Schema.Component {
+  collectionName: 'components_privacy_section_lists';
+  info: {
+    displayName: 'Se\u00E7\u00E3o (Lista)';
+    icon: 'list';
+  };
+  attributes: {
+    title: Attribute.String;
+    intro_text: Attribute.Text;
+    items: Attribute.Component<'privacy.list-item', true>;
+  };
+}
+
+export interface PrivacyListItem extends Schema.Component {
+  collectionName: 'components_privacy_list_items';
+  info: {
+    displayName: 'Item da Lista';
+    icon: 'dot-circle';
+  };
+  attributes: {
+    label: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface SharedVideoBlock extends Schema.Component {
   collectionName: 'components_content_blocks_video_blocks';
   info: {
@@ -420,43 +457,6 @@ export interface SharedApproach extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
-  };
-}
-
-export interface PrivacySectionText extends Schema.Component {
-  collectionName: 'components_privacy_section_texts';
-  info: {
-    displayName: 'Se\u00E7\u00E3o (Texto)';
-    icon: 'align-left';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.RichText;
-  };
-}
-
-export interface PrivacySectionList extends Schema.Component {
-  collectionName: 'components_privacy_section_lists';
-  info: {
-    displayName: 'Se\u00E7\u00E3o (Lista)';
-    icon: 'list';
-  };
-  attributes: {
-    title: Attribute.String;
-    intro_text: Attribute.Text;
-    items: Attribute.Component<'privacy.list-item', true>;
-  };
-}
-
-export interface PrivacyListItem extends Schema.Component {
-  collectionName: 'components_privacy_list_items';
-  info: {
-    displayName: 'Item da Lista';
-    icon: 'dot-circle';
-  };
-  attributes: {
-    label: Attribute.String;
-    description: Attribute.Text;
   };
 }
 
@@ -1100,6 +1100,9 @@ export interface ArticleColumnContent extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'privacy.section-text': PrivacySectionText;
+      'privacy.section-list': PrivacySectionList;
+      'privacy.list-item': PrivacyListItem;
       'shared.video-block': SharedVideoBlock;
       'shared.team-section': SharedTeamSection;
       'shared.team-member': SharedTeamMember;
@@ -1131,9 +1134,6 @@ declare module '@strapi/types' {
       'shared.awards-and-clients': SharedAwardsAndClients;
       'shared.award': SharedAward;
       'shared.approach': SharedApproach;
-      'privacy.section-text': PrivacySectionText;
-      'privacy.section-list': PrivacySectionList;
-      'privacy.list-item': PrivacyListItem;
       'home.sub-title': HomeSubTitle;
       'home.slider': HomeSlider;
       'home.intro': HomeIntro;

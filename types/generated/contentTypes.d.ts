@@ -1128,6 +1128,11 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
       'oneToMany',
       'api::full-tag.full-tag'
     >;
+    relatedCases: Attribute.Relation<
+      'api::cases.case-study',
+      'oneToOne',
+      'api::cases.case-study'
+    >;
     contentBlocks: Attribute.DynamicZone<
       [
         'case-study.hero-section',

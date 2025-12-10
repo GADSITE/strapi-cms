@@ -74,6 +74,11 @@
       "relation": "oneToMany",
       "target": "api::full-tag.full-tag"
     },
+    "relatedCases": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cases.case-study"
+    },
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
@@ -91,5 +96,6 @@
         "case-study.column-content"
       ]
     }
+
   }
 }
