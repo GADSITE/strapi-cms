@@ -7,8 +7,9 @@
   "options": {},
   "attributes": {
     "media": {
-      "allowedTypes": [
-        "images"
+     "allowedTypes": [
+        "images",
+        "videos"
       ],
       "type": "media",
       "multiple": false

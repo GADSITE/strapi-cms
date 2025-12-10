@@ -1,5 +1,42 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface PrivacySectionText extends Schema.Component {
+  collectionName: 'components_privacy_section_texts';
+  info: {
+    displayName: 'Se\u00E7\u00E3o (Texto)';
+    icon: 'align-left';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+  };
+}
+
+export interface PrivacySectionList extends Schema.Component {
+  collectionName: 'components_privacy_section_lists';
+  info: {
+    displayName: 'Se\u00E7\u00E3o (Lista)';
+    icon: 'list';
+  };
+  attributes: {
+    title: Attribute.String;
+    intro_text: Attribute.Text;
+    items: Attribute.Component<'privacy.list-item', true>;
+  };
+}
+
+export interface PrivacyListItem extends Schema.Component {
+  collectionName: 'components_privacy_list_items';
+  info: {
+    displayName: 'Item da Lista';
+    icon: 'dot-circle';
+  };
+  attributes: {
+    label: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface SharedVideoBlock extends Schema.Component {
   collectionName: 'components_content_blocks_video_blocks';
   info: {
@@ -176,7 +213,7 @@ export interface SharedListAwards extends Schema.Component {
     icon: 'apps';
   };
   attributes: {
-    media: Attribute.Media<'images'>;
+    media: Attribute.Media<'images' | 'videos'>;
     title: Attribute.String;
     link: Attribute.String;
   };
@@ -422,43 +459,6 @@ export interface SharedApproach extends Schema.Component {
   };
 }
 
-export interface PrivacySectionText extends Schema.Component {
-  collectionName: 'components_privacy_section_texts';
-  info: {
-    displayName: 'Se\u00E7\u00E3o (Texto)';
-    icon: 'align-left';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.RichText;
-  };
-}
-
-export interface PrivacySectionList extends Schema.Component {
-  collectionName: 'components_privacy_section_lists';
-  info: {
-    displayName: 'Se\u00E7\u00E3o (Lista)';
-    icon: 'list';
-  };
-  attributes: {
-    title: Attribute.String;
-    intro_text: Attribute.Text;
-    items: Attribute.Component<'privacy.list-item', true>;
-  };
-}
-
-export interface PrivacyListItem extends Schema.Component {
-  collectionName: 'components_privacy_list_items';
-  info: {
-    displayName: 'Item da Lista';
-    icon: 'dot-circle';
-  };
-  attributes: {
-    label: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface HomeSubTitle extends Schema.Component {
   collectionName: 'components_home_sub_titles';
   info: {
@@ -582,73 +582,6 @@ export interface HistoryLegacyAboutTwoImages extends Schema.Component {
     media: Attribute.Media<'images' | 'videos'>;
     mediaTwo: Attribute.Media<'images' | 'videos'>;
     year: Attribute.String;
-  };
-}
-
-export interface GadInsightsSlider extends Schema.Component {
-  collectionName: 'components_gad_insights_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'apps';
-  };
-  attributes: {
-    contentSlider: Attribute.Component<'gad-insights.content-slider', true>;
-  };
-}
-
-export interface GadInsightsReview extends Schema.Component {
-  collectionName: 'components_gad_insights_reviews';
-  info: {
-    displayName: 'Review';
-    icon: 'apps';
-  };
-  attributes: {
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    description: Attribute.RichText;
-    insight: Attribute.Boolean;
-  };
-}
-
-export interface GadInsightsQuote extends Schema.Component {
-  collectionName: 'components_gad_insights_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'archive';
-  };
-  attributes: {
-    quote: Attribute.Text;
-    author: Attribute.String;
-    authorRole: Attribute.String;
-  };
-}
-
-export interface GadInsightsInsights extends Schema.Component {
-  collectionName: 'components_gad_insights_insights';
-  info: {
-    displayName: 'Insights';
-    icon: 'apps';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.RichText;
-    media: Attribute.Media<'images' | 'videos'>;
-    mediaPosition: Attribute.Enumeration<['left', 'right']>;
-  };
-}
-
-export interface GadInsightsContentSlider extends Schema.Component {
-  collectionName: 'components_gad_insights_content_sliders';
-  info: {
-    displayName: 'contentSlider';
-    icon: 'apps';
-  };
-  attributes: {
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    description: Attribute.RichText;
-    media: Attribute.Media<'images' | 'videos'>;
-    mediaPosition: Attribute.Enumeration<['left', 'right']>;
   };
 }
 
@@ -848,6 +781,73 @@ export interface CaseStudyColumnContent extends Schema.Component {
       Attribute.DefaultTo<'white'>;
     textColor: Attribute.Enumeration<['white', 'black', 'primary']> &
       Attribute.DefaultTo<'black'>;
+  };
+}
+
+export interface GadInsightsSlider extends Schema.Component {
+  collectionName: 'components_gad_insights_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'apps';
+  };
+  attributes: {
+    contentSlider: Attribute.Component<'gad-insights.content-slider', true>;
+  };
+}
+
+export interface GadInsightsReview extends Schema.Component {
+  collectionName: 'components_gad_insights_reviews';
+  info: {
+    displayName: 'Review';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.RichText;
+    insight: Attribute.Boolean;
+  };
+}
+
+export interface GadInsightsQuote extends Schema.Component {
+  collectionName: 'components_gad_insights_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'archive';
+  };
+  attributes: {
+    quote: Attribute.Text;
+    author: Attribute.String;
+    authorRole: Attribute.String;
+  };
+}
+
+export interface GadInsightsInsights extends Schema.Component {
+  collectionName: 'components_gad_insights_insights';
+  info: {
+    displayName: 'Insights';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos'>;
+    mediaPosition: Attribute.Enumeration<['left', 'right']>;
+  };
+}
+
+export interface GadInsightsContentSlider extends Schema.Component {
+  collectionName: 'components_gad_insights_content_sliders';
+  info: {
+    displayName: 'contentSlider';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos'>;
+    mediaPosition: Attribute.Enumeration<['left', 'right']>;
   };
 }
 
@@ -1098,6 +1098,9 @@ export interface ArticleColumnContent extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'privacy.section-text': PrivacySectionText;
+      'privacy.section-list': PrivacySectionList;
+      'privacy.list-item': PrivacyListItem;
       'shared.video-block': SharedVideoBlock;
       'shared.team-section': SharedTeamSection;
       'shared.team-member': SharedTeamMember;
@@ -1129,9 +1132,6 @@ declare module '@strapi/types' {
       'shared.awards-and-clients': SharedAwardsAndClients;
       'shared.award': SharedAward;
       'shared.approach': SharedApproach;
-      'privacy.section-text': PrivacySectionText;
-      'privacy.section-list': PrivacySectionList;
-      'privacy.list-item': PrivacyListItem;
       'home.sub-title': HomeSubTitle;
       'home.slider': HomeSlider;
       'home.intro': HomeIntro;
@@ -1141,11 +1141,6 @@ declare module '@strapi/types' {
       'history-legacy.media-block': HistoryLegacyMediaBlock;
       'history-legacy.about': HistoryLegacyAbout;
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
-      'gad-insights.slider': GadInsightsSlider;
-      'gad-insights.review': GadInsightsReview;
-      'gad-insights.quote': GadInsightsQuote;
-      'gad-insights.insights': GadInsightsInsights;
-      'gad-insights.content-slider': GadInsightsContentSlider;
       'case-study.video': CaseStudyVideo;
       'case-study.two-images': CaseStudyTwoImages;
       'case-study.two-column': CaseStudyTwoColumn;
@@ -1158,6 +1153,11 @@ declare module '@strapi/types' {
       'case-study.gallery': CaseStudyGallery;
       'case-study.full-width-media': CaseStudyFullWidthMedia;
       'case-study.column-content': CaseStudyColumnContent;
+      'gad-insights.slider': GadInsightsSlider;
+      'gad-insights.review': GadInsightsReview;
+      'gad-insights.quote': GadInsightsQuote;
+      'gad-insights.insights': GadInsightsInsights;
+      'gad-insights.content-slider': GadInsightsContentSlider;
       'article.video': ArticleVideo;
       'article.two-images': ArticleTwoImages;
       'article.two-column': ArticleTwoColumn;

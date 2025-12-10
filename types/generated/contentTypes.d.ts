@@ -930,7 +930,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       }> &
       Attribute.DefaultTo<'slim'>;
     publishedAt: Attribute.DateTime;
-    cover: Attribute.Media<'images'> &
+    cover: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1041,7 +1041,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    avatar: Attribute.Media<'images'> &
+    avatar: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1634,7 +1634,7 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'slim'>;
-    cover: Attribute.Media<'images'> &
+    cover: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1820,7 +1820,7 @@ export interface ApiNewNew extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'slim'>;
-    cover: Attribute.Media<'images'> &
+    cover: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1892,7 +1892,7 @@ export interface ApiOhMyGadOhMyGad extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'slim'>;
-    cover: Attribute.Media<'images'> &
+    cover: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2645,7 +2645,7 @@ export interface ApiTransformingGadTransformingGad
         };
       }> &
       Attribute.DefaultTo<'slim'>;
-    cover: Attribute.Media<'images'> &
+    cover: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2745,7 +2745,7 @@ export interface ApiTransformingGadAppointmentTransformingGadAppointment
           localized: true;
         };
       }>;
-    media: Attribute.Media<'images'> &
+    media: Attribute.Media<'images' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
