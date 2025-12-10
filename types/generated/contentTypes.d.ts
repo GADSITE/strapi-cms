@@ -1488,25 +1488,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
     };
   };
   attributes: {
-    Links: Attribute.Component<'shared.links', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     email: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    otherChannels: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2011,7 +1993,7 @@ export interface ApiPageAboutPageAbout extends Schema.SingleType {
           localized: true;
         };
       }>;
-    Awards: Attribute.Component<'shared.awards', true> &
+    Awards: Attribute.Component<'shared.awards'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
