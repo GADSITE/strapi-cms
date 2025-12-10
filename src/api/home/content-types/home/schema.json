@@ -21,6 +21,17 @@
       "component": "home.slider",
       "repeatable": true
     },
+    "Intro": {
+      "displayName": "Intro",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.intro"
+    },
     "Cases": {
       "displayName": "Cases",
       "type": "component",
@@ -33,8 +44,9 @@
       "repeatable": false,
       "component": "home.call-to-action"
     },
-    "Intro": {
-      "displayName": "Intro",
+
+    "Collaborators": {
+      "displayName": "Collaborators",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -42,7 +54,7 @@
           "localized": true
         }
       },
-      "component": "home.intro"
+      "component": "home.collaborators"
     }
   }
 }

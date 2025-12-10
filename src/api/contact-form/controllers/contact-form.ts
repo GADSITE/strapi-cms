@@ -33,9 +33,6 @@ export default factories.createCoreController('api::contact-form.contact-form', 
         data,
       });
 
-      // Log para debug
-      console.log('Novo formulário de contato criado:', contactForm);
-
       return ctx.created(contactForm);
     } catch (error) {
       console.error('Erro ao criar formulário de contato:', error);

@@ -1123,6 +1123,11 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
       'manyToMany',
       'api::service-tag.service-tag'
     >;
+    caseFullTags: Attribute.Relation<
+      'api::cases.case-study',
+      'oneToMany',
+      'api::full-tag.full-tag'
+    >;
     contentBlocks: Attribute.DynamicZone<
       [
         'case-study.hero-section',
@@ -1138,11 +1143,6 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
         'case-study.two-column',
         'case-study.column-content'
       ]
-    >;
-    caseFullTags: Attribute.Relation<
-      'api::cases.case-study',
-      'oneToMany',
-      'api::full-tag.full-tag'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1755,7 +1755,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     SliderHome: Attribute.Component<'home.slider', true>;
     Cases: Attribute.Component<'home.cases'>;
     CallToAction: Attribute.Component<'home.call-to-action'>;
-    Intro: Attribute.Component<'home.intro'> &
+    Collaborators: Attribute.Component<'home.collaborators'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

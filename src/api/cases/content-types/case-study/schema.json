@@ -69,6 +69,11 @@
       "relation": "manyToMany",
       "target": "api::service-tag.service-tag"
     },
+    "caseFullTags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::full-tag.full-tag"
+    },
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
@@ -85,11 +90,6 @@
         "case-study.two-column",
         "case-study.column-content"
       ]
-    },
-    "caseFullTags": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::full-tag.full-tag"
     }
   }
 }
