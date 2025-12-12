@@ -1737,6 +1737,12 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     favicon: Attribute.Media<'images' | 'files' | 'videos'>;
     siteDescription: Attribute.Text & Attribute.Required;
     defaultSeo: Attribute.Component<'shared.seo'>;
+    contactHeaderLink: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
