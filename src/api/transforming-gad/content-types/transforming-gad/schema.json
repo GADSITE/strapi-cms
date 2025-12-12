@@ -88,6 +88,14 @@
         }
       }
     },
+    "coverSound": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",

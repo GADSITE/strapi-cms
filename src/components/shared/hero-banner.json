@@ -20,6 +20,9 @@
         "videos"
       ]
     },
+    "background_imageSound": {
+      "type": "boolean"
+    },
     "video": {
       "type": "media",
       "multiple": false,
@@ -28,6 +31,9 @@
         "images",
         "videos"
       ]
+    },
+    "videoSound": {
+      "type": "boolean"
     }
   }
 }

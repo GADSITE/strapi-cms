@@ -17,6 +17,9 @@
         "videos"
       ]
     },
+    "logoSound": {
+      "type": "boolean"
+    },
     "year": {
       "type": "string"
     }

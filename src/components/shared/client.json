@@ -16,6 +16,9 @@
         "images",
         "videos"
       ]
+    },
+    "logoSound": {
+      "type": "boolean"
     }
   }
 }

@@ -936,6 +936,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    coverSound: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     author: Attribute.Relation<
       'api::article.article',
       'manyToOne',
@@ -1047,6 +1053,12 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    avatarSound: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     email: Attribute.Email &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1109,7 +1121,9 @@ export interface ApiCasesCaseStudy extends Schema.CollectionType {
     slug: Attribute.UID<'api::cases.case-study', 'title'>;
     description: Attribute.Text;
     thumb: Attribute.Media<'images' | 'videos'>;
+    thumbSound: Attribute.Boolean;
     imageFeatured: Attribute.Media<'images' | 'videos'>;
+    imageFeaturedSound: Attribute.Boolean;
     type: Attribute.Enumeration<['large', 'slim']>;
     order: Attribute.Integer;
     featured: Attribute.Boolean & Attribute.DefaultTo<false>;
@@ -1429,6 +1443,12 @@ export interface ApiContentsContent extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    mediaSound: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     external_link: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1639,6 +1659,12 @@ export interface ApiGadInsightGadInsight extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    coverSound: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     featured: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1825,6 +1851,12 @@ export interface ApiNewNew extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    coverSound: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     featured: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1892,6 +1924,12 @@ export interface ApiOhMyGadOhMyGad extends Schema.CollectionType {
       }> &
       Attribute.DefaultTo<'slim'>;
     cover: Attribute.Media<'images' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    coverSound: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2656,6 +2694,12 @@ export interface ApiTransformingGadTransformingGad
           localized: true;
         };
       }>;
+    coverSound: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     author: Attribute.Relation<
       'api::transforming-gad.transforming-gad',
       'manyToOne',
@@ -2751,6 +2795,12 @@ export interface ApiTransformingGadAppointmentTransformingGadAppointment
         };
       }>;
     media: Attribute.Media<'images' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    mediaSound: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

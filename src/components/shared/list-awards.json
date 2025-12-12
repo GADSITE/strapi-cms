@@ -14,6 +14,9 @@
       "type": "media",
       "multiple": false
     },
+    "mediaSound": {
+      "type": "boolean"
+    },
     "title": {
       "type": "string"
     },

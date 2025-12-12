@@ -12,6 +12,9 @@
       "required": true,
       "allowedTypes": ["images", "videos"]
     },
+    "backgroundMediaSound": {
+      "type": "boolean"
+    },
     "title": {
       "type": "string"
     },

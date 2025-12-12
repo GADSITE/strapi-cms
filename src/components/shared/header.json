@@ -16,6 +16,9 @@
         "videos"
       ]
     },
+    "image1Sound": {
+      "type": "boolean"
+    },
     "image2": {
       "allowedTypes": [
         "images",
@@ -24,6 +27,9 @@
       "type": "media",
       "multiple": false
     },
+    "image2Sound": {
+      "type": "boolean"
+    },
     "image3": {
       "allowedTypes": [
         "images",
@@ -31,6 +37,9 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "image3Sound": {
+      "type": "boolean"
     }
   }
 }

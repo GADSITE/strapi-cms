@@ -23,6 +23,9 @@
         "images",
         "videos"
       ]
+    },
+    "imageSound": {
+      "type": "boolean"
     }
   }
 }

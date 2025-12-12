@@ -15,6 +15,9 @@
         "images",
         "videos"
       ]
+    },
+    "filesSound": {
+      "type": "boolean"
     }
   }
 }

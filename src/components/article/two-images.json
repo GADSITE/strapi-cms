@@ -17,6 +17,9 @@
         "videos"
       ]
     },
+    "image1Sound": {
+      "type": "boolean"
+    },
     "image2": {
       "type": "media",
       "multiple": false,
@@ -25,6 +28,9 @@
         "images",
         "videos"
       ]
+    },
+    "image2Sound": {
+      "type": "boolean"
     },
     "caption1": {
       "type": "string"

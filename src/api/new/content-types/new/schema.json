@@ -59,6 +59,14 @@
         }
       }
     },
+    "coverSound": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
     "featured": {
       "type": "boolean",
       "default": false,

@@ -21,6 +21,9 @@
         "videos"
       ]
     },
+    "mediaSound": {
+      "type": "boolean"
+    },
     "signature": {
       "type": "string"
     }

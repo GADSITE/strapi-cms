@@ -36,6 +36,9 @@
         "videos"
       ]
     },
+    "thumbSound": {
+      "type": "boolean"
+    },
     "imageFeatured": {
       "type": "media",
       "multiple": false,
@@ -44,6 +47,9 @@
         "images",
         "videos"
       ]
+    },
+    "imageFeaturedSound": {
+      "type": "boolean"
     },
     "type": {
       "type": "enumeration",

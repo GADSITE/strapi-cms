@@ -17,6 +17,9 @@
         "videos"
       ]
     },
+    "videoSound": {
+      "type": "boolean"
+    },
     "autoplay": {
       "type": "boolean"
     }

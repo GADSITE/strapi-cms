@@ -22,6 +22,9 @@
         "videos"
       ]
     },
+    "mediaSound": {
+      "type": "boolean"
+    },
     "year": {
       "type": "string"
     }

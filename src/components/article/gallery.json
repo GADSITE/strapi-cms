@@ -17,6 +17,9 @@
         "videos"
       ]
     },
+    "imagesSound": {
+      "type": "boolean"
+    },
     "title": {
       "type": "string"
     },

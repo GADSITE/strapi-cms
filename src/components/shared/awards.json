@@ -16,6 +16,9 @@
         "videos"
       ]
     },
+    "mediaSound": {
+      "type": "boolean"
+    },
     "title": {
       "type": "string"
     },

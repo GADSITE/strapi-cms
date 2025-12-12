@@ -22,6 +22,9 @@
         "videos"
       ]
     },
+    "imageSound": {
+      "type": "boolean"
+    },
     "imagePosition": {
       "type": "enumeration",
       "enum": [

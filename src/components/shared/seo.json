@@ -39,6 +39,14 @@
           "localized": true
         }
       }
+    },
+    "shareImageSound": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
     }
   }
 }

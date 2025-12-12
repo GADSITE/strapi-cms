@@ -21,6 +21,9 @@
         "images",
         "videos"
       ]
+    },
+    "mediaSound": {
+      "type": "boolean"
     }
   }
 }

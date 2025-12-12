@@ -1,42 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PrivacySectionText extends Schema.Component {
-  collectionName: 'components_privacy_section_texts';
-  info: {
-    displayName: 'Se\u00E7\u00E3o (Texto)';
-    icon: 'align-left';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.RichText;
-  };
-}
-
-export interface PrivacySectionList extends Schema.Component {
-  collectionName: 'components_privacy_section_lists';
-  info: {
-    displayName: 'Se\u00E7\u00E3o (Lista)';
-    icon: 'list';
-  };
-  attributes: {
-    title: Attribute.String;
-    intro_text: Attribute.Text;
-    items: Attribute.Component<'privacy.list-item', true>;
-  };
-}
-
-export interface PrivacyListItem extends Schema.Component {
-  collectionName: 'components_privacy_list_items';
-  info: {
-    displayName: 'Item da Lista';
-    icon: 'dot-circle';
-  };
-  attributes: {
-    label: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface SharedVideoBlock extends Schema.Component {
   collectionName: 'components_content_blocks_video_blocks';
   info: {
@@ -46,6 +9,7 @@ export interface SharedVideoBlock extends Schema.Component {
   attributes: {
     title: Attribute.String;
     video: Attribute.Media<'images' | 'videos'>;
+    videoSound: Attribute.Boolean;
     autoplay: Attribute.Boolean;
   };
 }
@@ -110,6 +74,7 @@ export interface SharedSlider extends Schema.Component {
   };
   attributes: {
     files: Attribute.Media<'images' | 'videos', true>;
+    filesSound: Attribute.Boolean;
   };
 }
 
@@ -155,6 +120,12 @@ export interface SharedSeo extends Schema.Component {
         };
       }>;
     shareImage: Attribute.Media<'images' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    shareImageSound: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -229,6 +200,7 @@ export interface SharedListAwards extends Schema.Component {
   };
   attributes: {
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     title: Attribute.String;
     link: Attribute.String;
   };
@@ -257,7 +229,9 @@ export interface SharedHeroBanner extends Schema.Component {
     title: Attribute.String;
     subtitle: Attribute.String;
     background_image: Attribute.Media<'images' | 'videos'>;
+    background_imageSound: Attribute.Boolean;
     video: Attribute.Media<'images' | 'videos'>;
+    videoSound: Attribute.Boolean;
   };
 }
 
@@ -298,8 +272,11 @@ export interface SharedHeader extends Schema.Component {
   };
   attributes: {
     image1: Attribute.Media<'images' | 'videos'>;
+    image1Sound: Attribute.Boolean;
     image2: Attribute.Media<'images' | 'videos'>;
+    image2Sound: Attribute.Boolean;
     image3: Attribute.Media<'images' | 'videos'>;
+    image3Sound: Attribute.Boolean;
   };
 }
 
@@ -362,6 +339,7 @@ export interface SharedClient extends Schema.Component {
   attributes: {
     name: Attribute.String;
     logo: Attribute.Media<'images' | 'videos'>;
+    logoSound: Attribute.Boolean;
   };
 }
 
@@ -375,6 +353,7 @@ export interface SharedChapter extends Schema.Component {
     title: Attribute.String;
     content: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
   };
 }
 
@@ -402,6 +381,7 @@ export interface SharedCallToAction extends Schema.Component {
   attributes: {
     description: Attribute.Text;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     title: Attribute.String;
   };
 }
@@ -428,6 +408,7 @@ export interface SharedAwards extends Schema.Component {
   };
   attributes: {
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     title: Attribute.String;
     description: Attribute.RichText;
     ListAwards: Attribute.Component<'shared.list-awards', true>;
@@ -455,6 +436,7 @@ export interface SharedAward extends Schema.Component {
   attributes: {
     name: Attribute.String;
     logo: Attribute.Media<'images' | 'videos'>;
+    logoSound: Attribute.Boolean;
     year: Attribute.String;
   };
 }
@@ -553,7 +535,45 @@ export interface HomeCallToAction extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos', true>;
+    mediaSound: Attribute.Boolean;
     Button: Attribute.Component<'shared.button'>;
+  };
+}
+
+export interface PrivacySectionText extends Schema.Component {
+  collectionName: 'components_privacy_section_texts';
+  info: {
+    displayName: 'Se\u00E7\u00E3o (Texto)';
+    icon: 'align-left';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+  };
+}
+
+export interface PrivacySectionList extends Schema.Component {
+  collectionName: 'components_privacy_section_lists';
+  info: {
+    displayName: 'Se\u00E7\u00E3o (Lista)';
+    icon: 'list';
+  };
+  attributes: {
+    title: Attribute.String;
+    intro_text: Attribute.Text;
+    items: Attribute.Component<'privacy.list-item', true>;
+  };
+}
+
+export interface PrivacyListItem extends Schema.Component {
+  collectionName: 'components_privacy_list_items';
+  info: {
+    displayName: 'Item da Lista';
+    icon: 'dot-circle';
+  };
+  attributes: {
+    label: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -565,6 +585,7 @@ export interface HistoryLegacyMediaBlock extends Schema.Component {
   };
   attributes: {
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
   };
 }
 
@@ -579,6 +600,7 @@ export interface HistoryLegacyAbout extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     year: Attribute.String;
   };
 }
@@ -594,7 +616,9 @@ export interface HistoryLegacyAboutTwoImages extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     mediaTwo: Attribute.Media<'images' | 'videos'>;
+    mediaTwoSound: Attribute.Boolean;
     year: Attribute.String;
   };
 }
@@ -647,6 +671,7 @@ export interface GadInsightsInsights extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     mediaPosition: Attribute.Enumeration<['left', 'right']>;
   };
 }
@@ -662,6 +687,7 @@ export interface GadInsightsContentSlider extends Schema.Component {
     subTitle: Attribute.String;
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     mediaPosition: Attribute.Enumeration<['left', 'right']>;
   };
 }
@@ -723,6 +749,7 @@ export interface CaseStudyTextImage extends Schema.Component {
     title: Attribute.String;
     text: Attribute.RichText;
     image: Attribute.Media<'images' | 'videos'>;
+    imageSound: Attribute.Boolean;
     imagePosition: Attribute.Enumeration<['left', 'right']> &
       Attribute.DefaultTo<'right'>;
     background: Attribute.String;
@@ -786,6 +813,7 @@ export interface CaseStudyHeroSection extends Schema.Component {
   };
   attributes: {
     backgroundMedia: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    backgroundMediaSound: Attribute.Boolean;
     title: Attribute.String;
     subtitle: Attribute.String;
     description: Attribute.Text;
@@ -811,6 +839,7 @@ export interface CaseStudyGridImage extends Schema.Component {
   };
   attributes: {
     image: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    imageSound: Attribute.Boolean;
     caption: Attribute.String;
     link: Attribute.String;
   };
@@ -825,6 +854,7 @@ export interface CaseStudyGallery extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<'images' | 'videos', true>;
+    imagesSound: Attribute.Boolean;
     layout: Attribute.Enumeration<['2-columns', '3-columns', 'masonry']> &
       Attribute.DefaultTo<'3-columns'>;
     showCaptions: Attribute.Boolean & Attribute.DefaultTo<false>;
@@ -839,6 +869,7 @@ export interface CaseStudyFullWidthMedia extends Schema.Component {
   };
   attributes: {
     media: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    mediaSound: Attribute.Boolean;
     caption: Attribute.String;
     showCaption: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
@@ -855,6 +886,7 @@ export interface CaseStudyColumnContent extends Schema.Component {
       Attribute.Required &
       Attribute.DefaultTo<'image'>;
     media: Attribute.Media<'images' | 'videos'>;
+    mediaSound: Attribute.Boolean;
     title: Attribute.String;
     description: Attribute.RichText;
     backgroundColor: Attribute.Enumeration<
@@ -875,6 +907,7 @@ export interface ArticleVideo extends Schema.Component {
   attributes: {
     video: Attribute.Media<'videos'> & Attribute.Required;
     poster: Attribute.Media<'images' | 'videos'>;
+    posterSound: Attribute.Boolean;
     caption: Attribute.String;
     autoplay: Attribute.Boolean & Attribute.DefaultTo<false>;
     controls: Attribute.Boolean & Attribute.DefaultTo<true>;
@@ -891,7 +924,9 @@ export interface ArticleTwoImages extends Schema.Component {
   };
   attributes: {
     image1: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    image1Sound: Attribute.Boolean;
     image2: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    image2Sound: Attribute.Boolean;
     caption1: Attribute.String;
     caption2: Attribute.String;
   };
@@ -924,6 +959,7 @@ export interface ArticleTextImage extends Schema.Component {
   attributes: {
     text: Attribute.RichText & Attribute.Required;
     image: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    imageSound: Attribute.Boolean;
     imagePosition: Attribute.Enumeration<['left', 'right']> &
       Attribute.DefaultTo<'left'>;
     caption: Attribute.String;
@@ -994,6 +1030,7 @@ export interface ArticleImageGrid extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    imagesSound: Attribute.Boolean;
     title: Attribute.String;
     columns: Attribute.Integer &
       Attribute.SetMinMax<
@@ -1019,6 +1056,7 @@ export interface ArticleHeroSection extends Schema.Component {
     subtitle: Attribute.String;
     description: Attribute.Text;
     backgroundMedia: Attribute.Media<'images' | 'videos'>;
+    backgroundMediaSound: Attribute.Boolean;
     overlayOpacity: Attribute.Decimal &
       Attribute.SetMinMax<
         {
@@ -1043,6 +1081,7 @@ export interface ArticleGridImage extends Schema.Component {
   };
   attributes: {
     image: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    imageSound: Attribute.Boolean;
     caption: Attribute.String;
     gridSize: Attribute.Enumeration<['small', 'medium', 'large']> &
       Attribute.DefaultTo<'medium'>;
@@ -1059,6 +1098,7 @@ export interface ArticleGallery extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    imagesSound: Attribute.Boolean;
     title: Attribute.String;
     description: Attribute.Text;
   };
@@ -1072,6 +1112,7 @@ export interface ArticleFullWidthMedia extends Schema.Component {
   };
   attributes: {
     media: Attribute.Media<'images' | 'videos'> & Attribute.Required;
+    mediaSound: Attribute.Boolean;
     caption: Attribute.String;
     altText: Attribute.String;
   };
@@ -1089,6 +1130,7 @@ export interface ArticleColumnItem extends Schema.Component {
     title: Attribute.String;
     content: Attribute.RichText & Attribute.Required;
     image: Attribute.Media<'images' | 'videos'>;
+    imageSound: Attribute.Boolean;
   };
 }
 
@@ -1113,9 +1155,6 @@ export interface ArticleColumnContent extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'privacy.section-text': PrivacySectionText;
-      'privacy.section-list': PrivacySectionList;
-      'privacy.list-item': PrivacyListItem;
       'shared.video-block': SharedVideoBlock;
       'shared.team-section': SharedTeamSection;
       'shared.team-member': SharedTeamMember;
@@ -1154,6 +1193,9 @@ declare module '@strapi/types' {
       'home.collaborators': HomeCollaborators;
       'home.cases': HomeCases;
       'home.call-to-action': HomeCallToAction;
+      'privacy.section-text': PrivacySectionText;
+      'privacy.section-list': PrivacySectionList;
+      'privacy.list-item': PrivacyListItem;
       'history-legacy.media-block': HistoryLegacyMediaBlock;
       'history-legacy.about': HistoryLegacyAbout;
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;

@@ -22,6 +22,9 @@
       "required": false,
       "allowedTypes": ["images", "videos"]
     },
+    "backgroundMediaSound": {
+      "type": "boolean"
+    },
     "overlayOpacity": {
       "type": "decimal",
       "default": 0.5,

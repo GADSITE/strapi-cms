@@ -23,6 +23,9 @@
       "type": "media",
       "multiple": false
     },
+    "mediaSound": {
+      "type": "boolean"
+    },
     "mediaPosition": {
       "type": "enumeration",
       "enum": [
