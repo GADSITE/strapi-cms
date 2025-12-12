@@ -21,6 +21,9 @@
         "audios"
       ]
     },
+    "mediaSound": {
+      "type": "boolean"
+    },
     "button": {
       "type": "component",
       "repeatable": false,
