@@ -37,92 +37,6 @@ export interface PrivacyListItem extends Schema.Component {
   };
 }
 
-export interface HomeSubTitle extends Schema.Component {
-  collectionName: 'components_home_sub_titles';
-  info: {
-    displayName: 'SubTitle';
-    icon: 'bulletList';
-  };
-  attributes: {
-    description: Attribute.String;
-  };
-}
-
-export interface HomeSlider extends Schema.Component {
-  collectionName: 'components_home_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    media: Attribute.Media<'images' | 'files' | 'videos'>;
-    subTitle: Attribute.Component<'home.sub-title', true>;
-    title: Attribute.String;
-    visible: Attribute.Boolean;
-  };
-}
-
-export interface HomeIntro extends Schema.Component {
-  collectionName: 'components_home_intros';
-  info: {
-    displayName: 'intro';
-    icon: 'apps';
-  };
-  attributes: {
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    description: Attribute.RichText;
-  };
-}
-
-export interface HomeCollaborators extends Schema.Component {
-  collectionName: 'components_home_collaborators';
-  info: {
-    displayName: 'Collaborators';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    mediaSound: Attribute.Boolean;
-    button: Attribute.Component<'shared.button'>;
-  };
-}
-
-export interface HomeCases extends Schema.Component {
-  collectionName: 'components_home_cases';
-  info: {
-    displayName: 'Cases';
-    icon: 'apps';
-  };
-  attributes: {
-    description: Attribute.RichText;
-    cases: Attribute.Relation<
-      'home.cases',
-      'oneToMany',
-      'api::cases.case-study'
-    >;
-  };
-}
-
-export interface HomeCallToAction extends Schema.Component {
-  collectionName: 'components_home_call_to_actions';
-  info: {
-    displayName: 'CallToAction';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.RichText;
-    media: Attribute.Media<'images' | 'videos', true>;
-    mediaSound: Attribute.Boolean;
-    Button: Attribute.Component<'shared.button'>;
-  };
-}
-
 export interface SharedVideoBlock extends Schema.Component {
   collectionName: 'components_content_blocks_video_blocks';
   info: {
@@ -579,6 +493,92 @@ export interface SharedApproach extends Schema.Component {
     description: Attribute.RichText;
     media: Attribute.Media<'images' | 'videos'>;
     mediaSound: Attribute.Boolean;
+  };
+}
+
+export interface HomeSubTitle extends Schema.Component {
+  collectionName: 'components_home_sub_titles';
+  info: {
+    displayName: 'SubTitle';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Attribute.String;
+  };
+}
+
+export interface HomeSlider extends Schema.Component {
+  collectionName: 'components_home_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    media: Attribute.Media<'images' | 'files' | 'videos'>;
+    subTitle: Attribute.Component<'home.sub-title', true>;
+    title: Attribute.String;
+    visible: Attribute.Boolean;
+  };
+}
+
+export interface HomeIntro extends Schema.Component {
+  collectionName: 'components_home_intros';
+  info: {
+    displayName: 'intro';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.RichText;
+  };
+}
+
+export interface HomeCollaborators extends Schema.Component {
+  collectionName: 'components_home_collaborators';
+  info: {
+    displayName: 'Collaborators';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mediaSound: Attribute.Boolean;
+    button: Attribute.Component<'shared.button'>;
+  };
+}
+
+export interface HomeCases extends Schema.Component {
+  collectionName: 'components_home_cases';
+  info: {
+    displayName: 'Cases';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Attribute.RichText;
+    cases: Attribute.Relation<
+      'home.cases',
+      'oneToMany',
+      'api::cases.case-study'
+    >;
+  };
+}
+
+export interface HomeCallToAction extends Schema.Component {
+  collectionName: 'components_home_call_to_actions';
+  info: {
+    displayName: 'CallToAction';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    media: Attribute.Media<'images' | 'videos', true>;
+    mediaSound: Attribute.Boolean;
+    Button: Attribute.Component<'shared.button'>;
   };
 }
 
@@ -1163,12 +1163,6 @@ declare module '@strapi/types' {
       'privacy.section-text': PrivacySectionText;
       'privacy.section-list': PrivacySectionList;
       'privacy.list-item': PrivacyListItem;
-      'home.sub-title': HomeSubTitle;
-      'home.slider': HomeSlider;
-      'home.intro': HomeIntro;
-      'home.collaborators': HomeCollaborators;
-      'home.cases': HomeCases;
-      'home.call-to-action': HomeCallToAction;
       'shared.video-block': SharedVideoBlock;
       'shared.team-section': SharedTeamSection;
       'shared.team-member': SharedTeamMember;
@@ -1201,6 +1195,12 @@ declare module '@strapi/types' {
       'shared.awards-and-clients': SharedAwardsAndClients;
       'shared.award': SharedAward;
       'shared.approach': SharedApproach;
+      'home.sub-title': HomeSubTitle;
+      'home.slider': HomeSlider;
+      'home.intro': HomeIntro;
+      'home.collaborators': HomeCollaborators;
+      'home.cases': HomeCases;
+      'home.call-to-action': HomeCallToAction;
       'history-legacy.media-block': HistoryLegacyMediaBlock;
       'history-legacy.about': HistoryLegacyAbout;
       'history-legacy.about-two-images': HistoryLegacyAboutTwoImages;
